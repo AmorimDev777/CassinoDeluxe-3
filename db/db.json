@@ -1,0 +1,84 @@
+{
+    "esportes": [
+        {
+            "id": 1,
+            "nome": "Baseball",
+            "icon": "baseball"
+        },
+        {
+            "id": 2,
+            "nome": "Basquete",
+            "icon": "basketball"
+        },
+        {
+            "id": 3,
+            "nome": "Boliche",
+            "icon": "bowling-ball"
+        },
+        {
+            "id": 4,
+            "nome": "Futebol Americano",
+            "icon": "football"
+        },
+        {
+            "id": 5,
+            "nome": "Futebol",
+            "icon": "futbol"
+        },
+        {
+            "id": 6,
+            "nome": "Golfe",
+            "icon": "golf-ball-tee"
+        },
+        {
+            "id": 7,
+            "nome": "Volêi",
+            "icon": "volleyball"
+        },
+        {
+            "id": 8,
+            "nome": "Ping-Pong",
+            "icon": "table-tennis-paddle-ball"
+        },
+        {
+            "id": 9,
+            "nome": "Atletismo",
+            "icon": "person-running"
+        },
+        {
+            "id": 10,
+            "nome": "Patinação no gelo",
+            "icon": "person-skating"
+        },
+        {
+            "id": 11,
+            "nome": "Esquiar",
+            "icon": "person-skiing"
+        },
+        {
+            "id": 12,
+            "nome": "Snowboard",
+            "icon": "person-snowboarding"
+        },
+        {
+            "id": 13,
+            "nome": "Natacao",
+            "icon": "person-swimming"
+        }
+    ],
+    "times": [
+        {
+            "id": 1,
+            "nome": "Palmeiras",
+            "esporte": "Futebol",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Palmeiras_logo.svg/3840px-Palmeiras_logo.svg.png"
+        },
+        {
+            "id": 2,
+            "nome": "Santa Cruz",
+            "esporte": "Futebol",
+            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Santa_Cruz_Futebol_Clube_logo.svg/1280px-Santa_Cruz_Futebol_Clube_logo.svg.png"
+        
+        }
+    ]
+}

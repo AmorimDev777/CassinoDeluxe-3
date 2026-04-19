@@ -1,1 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
+
+*{
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    outline: 0;
+}
+:root {
+    scroll-behavior: smooth;
+}
+.customScroll::-webkit-scrollbar-thumb {
+    box-shadow: 0 0 15px black;
+    background: rgb(255, 255, 255);
+    border-radius: 50rem;
+}
+.customScroll::-webkit-scrollbar {
+    background: rgb(24, 24, 24);
+}
+.gradienteSombra {
+    background: linear-gradient(to bottom, black, transparent 50%, black);
+}
+.gradienteBgInicio {
+    background: linear-gradient(to right, black, rgb(36, 36, 36));
+}
+
+.navBar {
+    .link {
+        @apply justify-center items-center relative gap-1 text-white transition-all duration-200 
+        hover:text-yellow-400 min-[1500px]:text-3xl
+    }
+    .linkLine {
+        @apply before:content-[''] before:absolute 
+        before:bg-black before:w-0 before:h-0.75 
+        before:bottom-px before:transition-all 
+        before:duration-300 before:ease-in-out 
+        hover:before:bg-yellow-400
+        hover:before:w-full
+    }
+    .linkPerfil {
+        @apply flex justify-start items-center w-full gap-3 text-sm
+    }
+    .linePerfil {
+        @apply h-px bg-zinc-800 w-[calc(100%+16px)] border-none
+    }
+    .iconMobile {
+        @apply text-sm
+    }
+}
+.mainHome {
+    .container {
+        @apply justify-center items-start flex-col h-full max-w-[50%] px-10 gap-8 text-white z-10
+        min-[1500px]:gap-14 min-[1500px]:px-30
+    }
+    .btn {
+        @apply flex justify-center items-center w-fit p-3 gap-2 rounded-[.6vw] bg-amber-400 
+        text-xs text-black cursor-pointer transition-all duration-300 
+        hover:brightness-[.7] sm:text-base min-[1500px]:p-6! min-[1500px]:text-3xl!
+    }
+    .icon {
+        @apply flex justify-center items-center p-3 aspect-square rounded-full bg-black 
+        border-2 border-white text-xl transition-all duration-200 hover:border-amber-400 
+        hover:text-amber-400 sm:text-3xl sm:border-3 min-[1500px]:p-8! min-[1500px]:text-5xl!
+    }
+}
