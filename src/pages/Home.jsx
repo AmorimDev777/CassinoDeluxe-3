@@ -4,21 +4,22 @@ import Navbar from "../components/Navbar"
 import ImgHome from "../assets/HomeImg.png"
 
 function Home() {
-  const [haveMoney] = useState(false)
+  const saldoStorage = localStorage.getItem('saldo') || 0
+  const [haveMoney] = useState(saldoStorage > 0 ? true : false)
+  console.log(saldoStorage)
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar saldo={Number(saldoStorage)}></Navbar>
       <main className={'mainHome gradienteBgInicio flex relative h-screen pt-[12vh]'}>
         <div className="gradienteSombra absolute left-0 top-0 w-full h-full"></div>
         <div className="container flex items-center! max-w-full! pr-10! md:items-start! md:max-w-[50%]! md:pr-0! lg:pr-10!">
           <h1 className="text-center text-4xl font-extrabold uppercase text-yellow-400 sm:text-5xl lg:text-6xl min-[1500px]:text-8xl!">Cassino Deluxe</h1>
           <p className="text-center text-sm sm:text-start sm:text-base lg:text-xl min-[1500px]:text-4xl!">O casa de apostas com as melhores odds do mercado, 100% licenciada,
-             com vários slots de várias provedoras, 
+             com vários slots de várias provedoras, também disponível para dispositivos móveis, tanto em android's e ios's,
              <span>{haveMoney 
               ? ' jogue nossos jogos e tenha a chance de forrar neles' 
               : ' faça um depósito agora e aposte nos nossos slots'}
              </span>
-             , também disponível para dispositivos móveis, tanto em android's e ios's
           </p>
           <span className="flex flex-col justify-center items-center w-full gap-5 min-[390px]:flex-row md:justify-start">
             <Link to="/patrocinios" className="btn"><i className="fa-solid fa-handshake"></i>Patrocinados</Link>

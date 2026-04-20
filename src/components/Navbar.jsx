@@ -3,11 +3,12 @@ import { useState, useEffect } from "react";
 import Logo from '../assets/Logo.png';
 import UsuarioPadrao from '../assets/UsuarioPadrao.jpg';
 
-function Navbar() {
-    const favSportStorage = localStorage.getItem('favoriteSport')
+function Navbar({saldo}) {
+    const favSportStorage = localStorage.getItem('favoriteSport') || 'Futebol'
+    const isLogadoStorage = localStorage.getItem('logado') || 'Não'
     const [menuOpen, setMenuOpen] = useState(false)
     const [esportes, setEsportes] = useState([])
-    const [logado] = useState(false)
+    const [logado] = useState(isLogadoStorage === 'Não' ? false : true)
     const [profileOptionsOpen, setProfileOptionsOpen] = useState(false)
     
     useEffect(() => {
@@ -41,8 +42,8 @@ function Navbar() {
                                 onClick={() => {openCloseProfileOptions()}}
                             />
                         </span>
-                        <p className="text-white">R$ 999999,99</p>
-                        <Link to="/deposito" className="hidden items-center h-full px-2 bg-amber-300 transition-all duration-200 hover:brightness-[.9] min-[390px]:flex sm:flex">Depositar</Link>
+                        <p className="text-white">R$ {Number(saldo).toFixed(2).replace('.', ',')}</p>
+                        <Link to="/transacoes" className="hidden items-center h-full px-2 bg-amber-300 transition-all duration-200 hover:brightness-[.9] min-[390px]:flex sm:flex">Depositar</Link>
                     </span>
                     <Link to="/configuracoes" className="link hidden text-xl sm:flex">
                         <i className='fa-solid fa-gear'></i>

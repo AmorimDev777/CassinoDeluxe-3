@@ -10,6 +10,11 @@
 :root {
     scroll-behavior: smooth;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .customScroll::-webkit-scrollbar-thumb {
     box-shadow: 0 0 15px black;
     background: rgb(255, 255, 255);
@@ -62,5 +67,19 @@
         @apply flex justify-center items-center p-3 aspect-square rounded-full bg-black 
         border-2 border-white text-xl transition-all duration-200 hover:border-amber-400 
         hover:text-amber-400 sm:text-3xl sm:border-3 min-[1500px]:p-8! min-[1500px]:text-5xl!
+    }
+}
+.mainTransacoes {
+    .boxNavbar {
+        @apply flex justify-center items-center flex-col w-full gap-1
+    }
+    .dropdown {
+        @apply flex justify-between items-center w-full py-3 px-5 transition-all duration-200 rounded-full cursor-pointer
+    }
+    .boxBtn {
+        @apply flex justify-between w-full;
+        .btn {
+            @apply p-4 bg-black text-white rounded-md cursor-pointer
+        }
     }
 }
