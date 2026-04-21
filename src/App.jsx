@@ -9,6 +9,7 @@ import Login from './pages/Login'
 import Patrocinios from './pages/Patrocinios'
 import Perfil from './pages/Perfil'
 import Personalizar from './pages/Personalizar'
+import Roleta from './pages/JogosCassino/Roleta'
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
       <Route path="/patrocinios" element={<Patrocinios />} />
       <Route path="/perfil" element={<Perfil />} />
       <Route path="/perfil/personalizar" element={<Personalizar />} />
+      {/* Jogos Cassino */}
+      <Route path="/roleta" element={<Roleta />} />
+      {/* Pagina não encontrada */}
       <Route path="*" element={<Erro404 />} />  {/* rota catch-all */}
     </Routes>
   )

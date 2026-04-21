@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import SetaVoltar from "../components/SetaVoltar"
 
 function Configuracoes() {
     const [favSport, setFavSport] = useState(localStorage.getItem('favoriteSport') || 'Futebol')
@@ -22,7 +23,7 @@ function Configuracoes() {
     }
     return (
         <>
-            <Link to={"/"}><i className="fa-solid fa-arrow-left fixed top-3 left-3 text-4xl text-white"></i></Link>
+            <SetaVoltar to='/' />
             <h1 className="text-3xl text-center text-white my-10">Esporte Favorito</h1>
             <div className="flex justify-center items-center flex-wrap w-[70vw] m-auto gap-3">
                 {esportes.map((esporte) => (

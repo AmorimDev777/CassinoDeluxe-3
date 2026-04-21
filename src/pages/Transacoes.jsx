@@ -11,7 +11,7 @@ function Transacoes() {
     const [selectedPage, setSelectedPage] = useState('deposito')
     const depositar = () => {
         const saldoStorage = Number(localStorage.getItem('saldo'))
-        let novoSaldo = saldoStorage + Number(inputValue)
+        let novoSaldo = (saldoStorage + Number(inputValue)).toFixed(2)
         if (Number(inputValue) <= 0) return alert('Valor Inválido')
         if (novoSaldo > 999999) {
             novoSaldo = 999999

@@ -83,3 +83,32 @@ input::-webkit-inner-spin-button {
         }
     }
 }
+.mainRoleta {   
+    .roleta {
+        background: conic-gradient(
+        rgb(0, 128, 64) 0deg 36deg,
+        rgb(226, 0, 0) 36deg 72deg,
+        black 72deg 108deg,
+        rgb(226, 0, 0) 108deg 144deg,
+        black 144deg 180deg,
+        rgb(226, 0, 0) 180deg 216deg,
+        black 216deg 252deg,
+        rgb(226, 0, 0) 252deg 288deg,
+        black 288deg 324deg,
+        rgb(226, 0, 0) 324deg 360deg
+        );
+    }
+    .roleta span {
+        background: conic-gradient(
+            red 0deg 60deg,
+            black 60deg 120deg,
+            red 120deg 180deg,
+            black 180deg 240deg,
+            red 240deg 300deg,
+            black 300deg 360deg
+        );
+    }
+    .btn {
+        @apply p-3 text-white rounded-sm cursor-pointer transition-all duration-200 hover:brightness-[.8]
+    }
+}

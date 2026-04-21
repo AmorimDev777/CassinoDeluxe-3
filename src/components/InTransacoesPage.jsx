@@ -3,6 +3,7 @@ import { useState } from "react"
 
 function InTransacoesPage({tipo, saldoStorage, inputValue, onChange, onClick, onClickBtn50, onClickBtn200, onClickBtn500}) {
     const [eyeOpen, setEyeOpen] = useState(true)
+    
     return (
         <div className="flex flex-col w-100 gap-5">
             <span className="flex flex-col absolute left-8 top-8 gap-2">
