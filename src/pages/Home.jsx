@@ -10,11 +10,11 @@ function Home() {
   return (
     <>
       <Navbar saldo={Number(saldoStorage)}></Navbar>
-      <main className={'mainHome gradienteBgInicio flex relative h-screen pt-[12vh]'}>
+      <main className='mainHome gradienteBgInicio flex relative h-screen pt-[12vh]'>
         <div className="gradienteSombra absolute left-0 top-0 w-full h-full"></div>
         <div className="container flex items-center! max-w-full! pr-10! md:items-start! md:max-w-[50%]! md:pr-0! lg:pr-10!">
-          <h1 className="text-center text-4xl font-extrabold uppercase text-yellow-400 sm:text-5xl lg:text-6xl min-[1500px]:text-8xl!">Cassino Deluxe</h1>
-          <p className="text-center text-sm sm:text-start sm:text-base lg:text-xl min-[1500px]:text-4xl!">O casa de apostas com as melhores odds do mercado, 100% licenciada,
+          <h1 className="text-center text-4xl font-extrabold uppercase text-yellow-400 sm:text-5xl lg:text-6xl min-[1500px]:text-6xl!">Cassino Deluxe</h1>
+          <p className="text-center text-sm sm:text-start sm:text-base lg:text-xl min-[1500px]:text-2xl!">O casa de apostas com as melhores odds do mercado, 100% licenciada,
              com vários slots de várias provedoras, também disponível para dispositivos móveis, tanto em android's e ios's,
              <span>{haveMoney 
               ? ' jogue nossos jogos e tenha a chance de forrar neles' 

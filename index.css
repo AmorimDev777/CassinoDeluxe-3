@@ -33,7 +33,7 @@ input::-webkit-inner-spin-button {
 .navBar {
     .link {
         @apply justify-center items-center relative gap-1 text-white transition-all duration-200 
-        hover:text-yellow-400 min-[1500px]:text-3xl
+        hover:text-yellow-400 min-[1500px]:text-2xl
     }
     .linkLine {
         @apply before:content-[''] before:absolute 
@@ -56,17 +56,20 @@ input::-webkit-inner-spin-button {
 .mainHome {
     .container {
         @apply justify-center items-start flex-col h-full max-w-[50%] px-10 gap-8 text-white z-10
-        min-[1500px]:gap-14 min-[1500px]:px-30
+        min-[1500px]:gap-10 min-[1500px]:px-30
     }
     .btn {
         @apply flex justify-center items-center w-fit p-3 gap-2 rounded-[.6vw] bg-amber-400 
         text-xs text-black cursor-pointer transition-all duration-300 
-        hover:brightness-[.7] sm:text-base min-[1500px]:p-6! min-[1500px]:text-3xl!
+        hover:brightness-[.7] sm:text-base min-[1500px]:p-6! min-[1500px]:text-2xl!
     }
     .icon {
         @apply flex justify-center items-center p-3 aspect-square rounded-full bg-black 
         border-2 border-white text-xl transition-all duration-200 hover:border-amber-400 
-        hover:text-amber-400 sm:text-3xl sm:border-3 min-[1500px]:p-8! min-[1500px]:text-5xl!
+        hover:text-amber-400 sm:text-3xl sm:border-3 min-[1500px]:p-5! min-[1500px]:text-3xl!;
+        i {
+            @apply flex justify-center items-center h-full aspect-square
+        }
     }
 }
 .mainTransacoes {

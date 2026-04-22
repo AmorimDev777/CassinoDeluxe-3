@@ -3,6 +3,8 @@ import { Link } from "react-router-dom"
 import Logo from "../assets/Logo.png"
 import ButtonTransacoes from "../components/ButtonTransacoes"
 import InTransacoesPage from "../components/InTransacoesPage"
+import InHistoricoPage from '../components/InHistoricoPage'
+import InHistoricoPage2 from '../components/InHistoricoPage2'
 
 function Transacoes() {
     const [inputValue, setInputValue] = useState('')
@@ -19,6 +21,7 @@ function Transacoes() {
         }
         localStorage.setItem('saldo', novoSaldo)
         setSaldoStorageState(novoSaldo)
+        salvarTransacao(inputValue, "Depósito")
         setInputValue('')
     }
     const sacar = () => {
@@ -27,7 +30,20 @@ function Transacoes() {
         if (saldoStorage < inputValue) return alert('Saldo Indisponível')
         localStorage.setItem('saldo', saldoStorage - inputValue)
         setSaldoStorageState(saldoStorage - Number(inputValue))
+        salvarTransacao(inputValue, "Saque")
         setInputValue('')
+    }
+    const salvarTransacao = (valor, tipo) => {
+        const data = new Date().toLocaleDateString('pt-BR');
+        const hora = new Date().toLocaleTimeString('pt-BR');
+        const historicoTransacao = JSON.parse(localStorage.getItem('historico'+tipo)) || []
+        const transacaoSalvar = {
+            "valor": "R$ " + Number(valor).toFixed(2).replace('.', ','),
+            "tipo": tipo,
+            "data": (`${data} ` + hora)
+        }
+        historicoTransacao.push(transacaoSalvar)
+        localStorage.setItem('historico'+tipo, JSON.stringify(historicoTransacao))
     }
     const renderContent = () => {
         switch (selectedPage) {
@@ -68,13 +84,25 @@ function Transacoes() {
                 )
 
             case 'historicoDeposito':
-                return <h1>histdep</h1>
+                return (
+                    <InHistoricoPage2
+                        whatHistorico="Depósito"
+                    />
+                )
 
             case 'historicoSaque':
-                return <h1>histsaqui</h1>
+                return (
+                    <InHistoricoPage2
+                        whatHistorico="Saque"
+                    />
+                )
 
             case 'historicoApostas':
-                return <h1>histapo</h1>
+                return (
+                    <InHistoricoPage
+                        whatHistorico="Apostas"
+                    />
+                )
 
             default:
                 return <h1>sobrou</h1>

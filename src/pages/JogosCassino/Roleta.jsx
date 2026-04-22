@@ -9,16 +9,16 @@ function Roleta() {
     const [isSpinning, setIsSpinning] = useState(false)
     const [angulo, setAngulo] = useState(0)
     const cores = [
-      "verde",
-      "vermelho",
-      "preto",
-      "vermelho",
-      "preto",
-      "vermelho",
-      "preto",
-      "vermelho",
-      "preto",
-      "vermelho"
+      "Verde",
+      "Vermelho",
+      "Preto",
+      "Vermelho",
+      "Preto",
+      "Vermelho",
+      "Preto",
+      "Vermelho",
+      "Preto",
+      "Vermelho"
     ]
     const girar = (odd, selectedColor) => {
       if (Number(inputValue) <= 0) return alert('Digite um valor válido') 
@@ -32,8 +32,8 @@ function Roleta() {
 
       setAngulo(novoAngulo)
 
-    localStorage.setItem('saldo', Number(saldo) - Number(inputValue))
-    setSaldo(Number(saldo) - Number(inputValue))
+      localStorage.setItem('saldo', Number(saldo) - Number(inputValue))
+      setSaldo(Number(saldo) - Number(inputValue))
 
       setTimeout(() => {
         const anguloFinal = novoAngulo % 360
@@ -43,15 +43,32 @@ function Roleta() {
 
         console.log("Resultado:", cores[index])
 
+        let ganhou = "Perdeu"
         if (cores[index] == selectedColor) {
             let newSaldo = 0
             newSaldo = Number(saldo) + (Number(inputValue) * odd)
             localStorage.setItem('saldo', newSaldo)
             setSaldo(newSaldo)
+            ganhou = "Ganhou"
         }
-
-        setIsSpinning(false) // libera botão
+        
+        salvarAposta(inputValue, 'Roleta', selectedColor, ganhou)
+        setIsSpinning(false)
       }, 3000)
+    }
+    const salvarAposta = (valorApostado, jogo, aposta, ganhou) => {
+        const data = new Date().toLocaleDateString('pt-BR');
+        const hora = new Date().toLocaleTimeString('pt-BR');
+        const historicoApostas = JSON.parse(localStorage.getItem('historicoApostas')) || []
+        const apostaSalvar = {
+            "valor": "R$ " + Number(valorApostado).toFixed(2).replace('.', ','),
+            "jogo": jogo,
+            "aposta": aposta,
+            "status": ganhou,
+            "data": (`${data} ` + hora)
+        }
+        historicoApostas.push(apostaSalvar)
+        localStorage.setItem('historicoApostas', JSON.stringify(historicoApostas))
     }
     return (
         <main className="mainRoleta flex justify-center items-center flex-col h-screen gap-5">
@@ -76,21 +93,21 @@ function Roleta() {
                     <button 
                         className="btn bg-red-500"
                         onClick={() => {
-                            girar(1.8, 'vermelho')
+                            girar(1.8, 'Vermelho')
                         }}
                         disabled={isSpinning}
                     >Vermelho 1.8x</button>
                     <button 
                         className="btn bg-black"
                         onClick={() => {
-                            girar(2, 'preto')
+                            girar(2, 'Preto')
                         }}
                         disabled={isSpinning}
                     >Preto 2x</button>
                     <button 
                         className="btn bg-green-500"
                         onClick={() => {
-                            girar(5, 'verde')
+                            girar(5, 'Verde')
                         }}
                         disabled={isSpinning}
                     >Verde 5x</button>
