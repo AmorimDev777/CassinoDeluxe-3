@@ -2,9 +2,9 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import Logo from "../assets/Logo.png"
 import ButtonTransacoes from "../components/ButtonTransacoes"
-import InTransacoesPage from "../components/InTransacoesPage"
-import InHistoricoPage from '../components/InHistoricoPage'
-import InHistoricoPage2 from '../components/InHistoricoPage2'
+import TransacoesComponent from "../components/TransacoesComponent"
+import HistoricoApostas from '../components/HistoricoApostas'
+import HistoricoTransacoes from '../components/HistoricoTransacoes'
 
 function Transacoes() {
     const [inputValue, setInputValue] = useState('')
@@ -21,7 +21,7 @@ function Transacoes() {
         }
         localStorage.setItem('saldo', novoSaldo)
         setSaldoStorageState(novoSaldo)
-        salvarTransacao(inputValue, "Depósito")
+        salvarTransacao(inputValue, "Deposito")
         setInputValue('')
     }
     const sacar = () => {
@@ -49,7 +49,7 @@ function Transacoes() {
         switch (selectedPage) {
             case 'deposito':
                 return (
-                    <InTransacoesPage
+                    <TransacoesComponent
                         tipo="Depositar" 
                         saldoStorage={saldoStorageState}
                         inputValue={inputValue}
@@ -67,7 +67,7 @@ function Transacoes() {
 
             case 'saque':
                 return (
-                    <InTransacoesPage
+                    <TransacoesComponent
                         tipo="Sacar" 
                         saldoStorage={saldoStorageState}
                         inputValue={inputValue}
@@ -85,22 +85,22 @@ function Transacoes() {
 
             case 'historicoDeposito':
                 return (
-                    <InHistoricoPage2
-                        whatHistorico="Depósito"
+                    <HistoricoTransacoes
+                        whatHistorico="historicoDeposito"
                     />
                 )
 
             case 'historicoSaque':
                 return (
-                    <InHistoricoPage2
-                        whatHistorico="Saque"
+                    <HistoricoTransacoes
+                        whatHistorico="historicoSaque"
                     />
                 )
 
             case 'historicoApostas':
                 return (
-                    <InHistoricoPage
-                        whatHistorico="Apostas"
+                    <HistoricoApostas
+                        whatHistorico="historicoApostas"
                     />
                 )
 
@@ -109,9 +109,10 @@ function Transacoes() {
         }
     }
     return (
-        <main className="mainTransacoes flex h-screen w-screen p-5 gap-5">
-            <div className="customScroll flex items-center flex-col h-full w-[250px] p-3 gap-3 bg-white rounded-2xl overflow-auto">
-                <span className="w-[80%]">
+        <main className="mainTransacoes flex flex-col h-fit w-full p-5 gap-5 sm:flex-row sm:h-screen">
+            <div className="customScroll flex items-center flex-col h-full w-full p-3 gap-3 bg-white rounded-2xl overflow-auto 
+            sm:w-[250px]">
+                <span className="hidden w-[80%] sm:flex">
                     <img src={Logo} alt="" className="transition-all duration-200 hover:scale-[1.1]" onClick={() => {setselectedOption('')}}/>
                 </span>
                 <div className="boxNavbar">
@@ -179,7 +180,7 @@ function Transacoes() {
                     Voltar Home
                 </Link>
             </div>
-            <div className="flex justify-center items-center flex-col relative flex-1 p-10 gap-5 bg-white rounded-2xl">
+            <div className="flex justify-center items-center flex-col relative flex-1 w-full p-10 gap-5 bg-white rounded-2xl">
                 {renderContent()}
             </div>
         </main>

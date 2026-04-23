@@ -16,12 +16,18 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 .customScroll::-webkit-scrollbar-thumb {
-    box-shadow: 0 0 15px black;
-    background: rgb(255, 255, 255);
+    background: white;
     border-radius: 50rem;
 }
 .customScroll::-webkit-scrollbar {
     background: rgb(24, 24, 24);
+}
+.customScrollHistorico::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 50rem;
+}
+.customScrollHistorico::-webkit-scrollbar {
+    background: white;
 }
 .gradienteSombra {
     background: linear-gradient(to bottom, black, transparent 50%, black);
@@ -80,9 +86,9 @@ input::-webkit-inner-spin-button {
         @apply flex justify-between items-center w-full py-3 px-5 transition-all duration-200 rounded-full cursor-pointer
     }
     .boxBtn {
-        @apply flex justify-between w-full;
+        @apply flex justify-between items-center flex-col w-full gap-2 md:flex-row;
         .btn {
-            @apply p-4 bg-black text-white rounded-md cursor-pointer
+            @apply w-full p-4 bg-black text-white rounded-md cursor-pointer md:w-fit xl:p-6 xl:text-2xl
         }
     }
 }
@@ -114,4 +120,8 @@ input::-webkit-inner-spin-button {
     .btn {
         @apply p-3 text-white rounded-sm cursor-pointer transition-all duration-200 hover:brightness-[.8]
     }
+}
+.containerHistorico {
+    @apply grid justify-start content-start grid-cols-1 h-full w-full gap-5 overflow-auto
+    md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 xl:text-lg 2xl:text-xl
 }
