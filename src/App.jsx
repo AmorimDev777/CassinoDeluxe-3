@@ -6,7 +6,7 @@ import Transacoes from './pages/Transacoes'
 import Erro404 from './pages/Erro404'
 import Esportes from './pages/Esportes'
 import Login from './pages/Login'
-import Patrocinios from './pages/Patrocinios'
+import Sobre from './pages/Sobre'
 import Perfil from './pages/Perfil'
 import Personalizar from './pages/Personalizar'
 import Roleta from './pages/JogosCassino/Roleta'
@@ -20,7 +20,7 @@ function App() {
       <Route path="/transacoes" element={<Transacoes />} />
       <Route path="/esportes" element={<Esportes />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/patrocinios" element={<Patrocinios />} />
+      <Route path="/sobre" element={<Sobre />} />
       <Route path="/perfil" element={<Perfil />} />
       <Route path="/perfil/personalizar" element={<Personalizar />} />
       {/* Jogos Cassino */}

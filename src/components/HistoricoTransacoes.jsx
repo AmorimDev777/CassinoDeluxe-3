@@ -4,12 +4,8 @@ function HistoricoTransacoes({whatHistorico}) {
     const [historico, setHistorico] = useState([])
 
     useEffect(() => {
-        try {
-            const data = JSON.parse(localStorage.getItem(whatHistorico)) || []
-            setHistorico(data)
-        } catch {
-            setHistorico([])
-        }
+        const data = JSON.parse(localStorage.getItem(whatHistorico)) || []
+        setHistorico(data)
     }, [whatHistorico])
 
     console.log(historico)

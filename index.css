@@ -21,6 +21,7 @@ input::-webkit-inner-spin-button {
 }
 .customScroll::-webkit-scrollbar {
     background: rgb(24, 24, 24);
+    width: 10px;
 }
 .customScrollHistorico::-webkit-scrollbar-thumb {
     background: black;
@@ -28,6 +29,7 @@ input::-webkit-inner-spin-button {
 }
 .customScrollHistorico::-webkit-scrollbar {
     background: white;
+    width: 10px;
 }
 .gradienteSombra {
     background: linear-gradient(to bottom, black, transparent 50%, black);
@@ -124,4 +126,30 @@ input::-webkit-inner-spin-button {
 .containerHistorico {
     @apply grid justify-start content-start grid-cols-1 h-full w-full gap-5 overflow-auto
     md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 xl:text-lg 2xl:text-xl
+}
+.mainSobre {
+    .customScroll::-webkit-scrollbar {
+        display: none;
+    }
+    .divPatrocinios {
+        .btnScroll {
+            @apply flex justify-center items-center fixed
+            cursor-pointer z-10;
+            i {
+                @apply text-4xl text-white
+            }
+        }
+    }
+    .divProvedoras {
+        
+    }
+    .divSobre {
+        img {
+            @apply w-full p-3 bg-zinc-800 object-contain rounded-md
+        }
+        a {
+            @apply flex justify-center items-center h-full p-3 text-2xl text-white border-3 border-white 
+            transition-all duration-300 aspect-square rounded-full hover:text-amber-400 hover:border-amber-400
+        }
+    }
 }

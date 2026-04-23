@@ -46,7 +46,7 @@ function Roleta() {
         let ganhou = "Perdeu"
         if (cores[index] == selectedColor) {
             let newSaldo = 0
-            newSaldo = Number(saldo) + (Number(inputValue) * odd)
+            newSaldo = (Number(saldo) - Number(inputValue)) + (Number(inputValue) * odd)
             localStorage.setItem('saldo', newSaldo)
             setSaldo(newSaldo)
             ganhou = "Ganhou"

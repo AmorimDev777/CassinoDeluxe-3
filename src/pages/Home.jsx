@@ -22,8 +22,8 @@ function Home() {
              </span>
           </p>
           <span className="flex flex-col justify-center items-center w-full gap-5 min-[390px]:flex-row md:justify-start">
-            <Link to="/patrocinios" className="btn"><i className="fa-solid fa-handshake"></i>Patrocinados</Link>
-            <Link to="/patrocinios" className="btn"><i className="fa-solid fa-handshake"></i>Patrocinadores</Link>
+            <Link to="/sobre" className="btn"><i className="fa-solid fa-handshake"></i>Patrocinados</Link>
+            <Link to="/sobre" className="btn"><i className="fa-solid fa-handshake"></i>Provedoras</Link>
           </span>
           <span className="flex justify-center w-full gap-5 md:justify-start">
             <a href="https://www.facebook.com/?locale=pt_BR" className="icon"><i className="fa-brands fa-facebook-f"></i></a>

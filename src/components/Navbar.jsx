@@ -34,9 +34,10 @@ function Navbar({saldo}) {
                     <li><Link to="/" className="link flex text-lg"><i className='fa-solid fa-house'></i></Link></li>
                     <li><Link to="/esportes" className="link linkLine flex">Esportes</Link></li>
                     <li><Link to="/cassino" className="link linkLine flex">Cassino</Link></li>
+                    <li><Link to="/sobre" className="link linkLine flex">Sobre</Link></li>
                 </ul>
                 <span className='flex justify-center items-center relative h-full gap-8'>
-                    <span className="flex justify-center items-center h-[70%] gap-2 pr-3 bg-zinc-900 text-xs overflow-hidden rounded-full min-[390px]:pr-0 sm:p-0 xl:h-[60%] min-[1500px]:h-[50%] min-[1500px]:text-lg">
+                    <span className="flex justify-center items-center h-[60%] gap-2 pr-3 bg-zinc-900 text-xs overflow-hidden rounded-full min-[390px]:pr-0 sm:p-0 xl:h-[60%] min-[1500px]:h-[50%] min-[1500px]:text-lg">
                         <span className="h-full transition-all duration-200 hover:brightness-[.9]">
                             <img src={UsuarioPadrao} alt="" className="h-full rounded-full object-contain cursor-pointer"
                                 onClick={() => {openCloseProfileOptions()}}
