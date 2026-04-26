@@ -10,6 +10,8 @@ import Sobre from './pages/Sobre'
 import Perfil from './pages/Perfil'
 import Personalizar from './pages/Personalizar'
 import Roleta from './pages/JogosCassino/Roleta'
+import CacaNiquel from './pages/JogosCassino/CacaNiquel'
+import Jokempo from './pages/JogosCassino/Jokempo'
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
       <Route path="/perfil/personalizar" element={<Personalizar />} />
       {/* Jogos Cassino */}
       <Route path="/roleta" element={<Roleta />} />
+      <Route path="/cacaniquel" element={<CacaNiquel />} />
+      <Route path="/jokempo" element={<Jokempo />} />
       {/* Pagina não encontrada */}
       <Route path="*" element={<Erro404 />} />  {/* rota catch-all */}
     </Routes>

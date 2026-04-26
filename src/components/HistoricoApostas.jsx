@@ -10,7 +10,7 @@ function HistoricoApostas({whatHistorico}) {
         <>
             <div className="customScrollHistorico containerHistorico">
                 {historico.map((aposta, index) => (
-                    <div key={index} className={`p-3 bg-white rounded-xl shadow-md border-2 ${aposta.status === 'Perdeu' ? 'shadow-red-500 border-red-500' : 'shadow-green-500 border-green-500'}`}>
+                    <div key={index} className={`p-3 bg-white rounded-xl shadow-md border-2 ${aposta.status === 'Perdeu' ? 'shadow-red-500 border-red-500' : aposta.status === 'Ganhou' ? 'shadow-green-500 border-green-500' : 'shadow-zinc-500 border-zinc-500'}`}>
                         <h1>{aposta.valor}</h1>
                         <h1>{aposta.jogo}</h1>
                         <h1>{aposta.aposta}</h1>

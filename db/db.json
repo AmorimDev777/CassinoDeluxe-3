@@ -66,6 +66,23 @@
             "icon": "person-swimming"
         }
     ],
+        "provedoras": [
+        {
+            "id": 1,
+            "nome": "Pragmatic",
+            "logo": "https://www.softswiss.com/wp-content/uploads/2022/03/pragmaticplay-1.png"
+        },
+        {
+            "id": 2,
+            "nome": "PG Soft",
+            "logo": "https://www.softswiss.com/wp-content/uploads/2022/04/pgsoft_.webp"
+        },
+        {
+            "id": 3,
+            "nome": "Evolution",
+            "logo": "https://www.softswiss.com/wp-content/uploads/2022/03/evolution-1.png"
+        }
+    ],
     "times": [
         {
             "id": 1,
@@ -514,23 +531,6 @@
           "escudo": "https://upload.wikimedia.org/wikipedia/pt/thumb/b/b4/Corinthians_simbolo.png/250px-Corinthians_simbolo.png",
           "esporte": "Futsal",
           "patrocinado": false
-        }
-    ],
-    "provedoras": [
-        {
-            "id": 1,
-            "nome": "Pragmatic",
-            "logo": "https://www.softswiss.com/wp-content/uploads/2022/03/pragmaticplay-1.png"
-        },
-        {
-            "id": 2,
-            "nome": "PG Soft",
-            "logo": "https://www.softswiss.com/wp-content/uploads/2022/04/pgsoft_.webp"
-        },
-        {
-            "id": 3,
-            "nome": "Evolution",
-            "logo": "https://www.softswiss.com/wp-content/uploads/2022/03/evolution-1.png"
         }
     ]
 }

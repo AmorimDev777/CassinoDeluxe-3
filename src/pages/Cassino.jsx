@@ -3,6 +3,8 @@ import CardCassino from "../components/CardCassino"
 import ImgCacaNiquel from "../assets/CardsCassino/CaçaNiquel.jpg"
 import ImgJokempo from "../assets/CardsCassino/Jokempo.png"
 import ImgRoleta from "../assets/CardsCassino/Roleta.jpg"
+import ImgFruitBonanza from "../assets/CardsCassino/FruitBonanza.png"
+import ImgBacBo from "../assets/CardsCassino/BacBo.jpg"
 
 function Cassino() {
     const saldoStorage = localStorage.getItem('saldo')
@@ -20,9 +22,11 @@ function Cassino() {
             </div>
             <div className="grid justify-start items-start p-3 pb-7 gap-y-10 gap-x-3
             grid-cols-1 min-[410px]:grid-cols-2 sm:grid-cols-3 xl:grid-cols-4">
-                <CardCassino imgGame={ImgCacaNiquel} gameName="Caça Níquel" location="cacaNiquel"/>
+                <CardCassino imgGame={ImgCacaNiquel} gameName="Caça Níquel" location="cacaniquel"/>
                 <CardCassino imgGame={ImgJokempo} gameName="Jokempo" location="jokempo"/>
                 <CardCassino imgGame={ImgRoleta} gameName="Roleta" location="roleta"/>
+                <CardCassino imgGame={ImgFruitBonanza} gameName="Fruit Bonanza" location="fruitBonanza"/>
+                <CardCassino imgGame={ImgBacBo} gameName="Bac Bo" location="bacBo"/>
             </div>
         </>
     )
