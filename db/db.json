@@ -83,6 +83,19 @@
             "logo": "https://www.softswiss.com/wp-content/uploads/2022/03/evolution-1.png"
         }
     ],
+    "confrontos": [
+        {
+            "id": 1,
+            "nome": "Loud SC x Capim FC",
+            "time1": 1,
+            "time2": 2,
+            "esporte": 5,
+            "data": "01/01/2000",
+            "hora": "00:00",
+            "local": "Arena Kings League",
+            "campeonato": "Kings League"
+        }
+    ],
     "times": [
         {
             "id": 1,

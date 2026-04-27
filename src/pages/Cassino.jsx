@@ -8,6 +8,33 @@ import ImgBacBo from "../assets/CardsCassino/BacBo.jpg"
 
 function Cassino() {
     const saldoStorage = localStorage.getItem('saldo')
+    const jogos = [
+        {
+            nome: "Caça Níquel",
+            url: "cacaniquel",
+            img: ImgCacaNiquel
+        },
+        {
+            nome: "Jokempo",
+            url: "jokempo",
+            img: ImgJokempo
+        },
+        {
+            nome: "Roleta",
+            url: "roleta",
+            img: ImgRoleta
+        },
+        {
+            nome: "Fruit Bonanza",
+            url: "fruitbonanza",
+            img: ImgFruitBonanza
+        },
+        {
+            nome: "Bac Bo",
+            url: "bacbo",
+            img: ImgBacBo
+        }
+    ]
     return (
         <>
             <div className="flex justify-between items-center w-full px-5 py-3 gap-5 min-[500px]:px-10">
@@ -22,11 +49,14 @@ function Cassino() {
             </div>
             <div className="grid justify-start items-start p-3 pb-7 gap-y-10 gap-x-3
             grid-cols-1 min-[410px]:grid-cols-2 sm:grid-cols-3 xl:grid-cols-4">
-                <CardCassino imgGame={ImgCacaNiquel} gameName="Caça Níquel" location="cacaniquel"/>
-                <CardCassino imgGame={ImgJokempo} gameName="Jokempo" location="jokempo"/>
-                <CardCassino imgGame={ImgRoleta} gameName="Roleta" location="roleta"/>
-                <CardCassino imgGame={ImgFruitBonanza} gameName="Fruit Bonanza" location="fruitBonanza"/>
-                <CardCassino imgGame={ImgBacBo} gameName="Bac Bo" location="bacBo"/>
+                {jogos.map((jogo, index) => (
+                    <CardCassino
+                        key={index}
+                        imgGame={jogo.img}
+                        gameName={jogo.nome}
+                        location={jogo.url}
+                    />
+                ))}
             </div>
         </>
     )
