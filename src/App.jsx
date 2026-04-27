@@ -13,6 +13,7 @@ import Roleta from './pages/JogosCassino/Roleta'
 import CacaNiquel from './pages/JogosCassino/CacaNiquel'
 import Jokempo from './pages/JogosCassino/Jokempo'
 import BacBo from './pages/JogosCassino/BacBo'
+import JogoEsporte from './pages/JogoEsporte'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Route path="/sobre" element={<Sobre />} />
       <Route path="/perfil" element={<Perfil />} />
       <Route path="/perfil/personalizar" element={<Personalizar />} />
+      <Route path="/jogo" element={<JogoEsporte />} />
       {/* Jogos Cassino */}
       <Route path="/roleta" element={<Roleta />} />
       <Route path="/cacaniquel" element={<CacaNiquel />} />

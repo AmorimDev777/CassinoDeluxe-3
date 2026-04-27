@@ -94,6 +94,17 @@
             "hora": "00:00",
             "local": "Arena Kings League",
             "campeonato": "Kings League"
+        },
+        {
+            "id": 2,
+            "nome": "Santa Cruz x Palmeiras",
+            "time1": 3,
+            "time2": 6,
+            "esporte": 5,
+            "data": "02/02/2000",
+            "hora": "10:00",
+            "local": "Nubank Arena",
+            "campeonato": "Copa do Brasil"
         }
     ],
     "times": [
