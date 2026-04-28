@@ -87,24 +87,69 @@
         {
             "id": 1,
             "nome": "Loud SC x Capim FC",
-            "time1": 1,
-            "time2": 2,
-            "esporte": 5,
-            "data": "01/01/2000",
+            "time1": "Loud SC",
+            "time2": "Capim FC",
+            "esporte": "Fut7",
+            "data": "01/01",
             "hora": "00:00",
             "local": "Arena Kings League",
-            "campeonato": "Kings League"
+            "campeonato": 1
         },
         {
             "id": 2,
             "nome": "Santa Cruz x Palmeiras",
-            "time1": 3,
-            "time2": 6,
-            "esporte": 5,
-            "data": "02/02/2000",
+            "time1": "Santa Cruz",
+            "time2": "Palmeiras",
+            "esporte": "Futebol",
+            "data": "02/02",
             "hora": "10:00",
             "local": "Nubank Arena",
-            "campeonato": "Copa do Brasil"
+            "campeonato": 2
+        },
+        {
+            "id": 3,
+            "nome": "Hornets x Lakers",
+            "time1": "Hornets",
+            "time2": "Lakers",
+            "esporte": "Basquete",
+            "data": "04/04",
+            "hora": "22:00",
+            "local": "Aro do Basquete",
+            "campeonato": 3
+        }
+    ],
+    "campeonatos": [
+        {
+            "id": 1,
+            "nome": "Kings League",
+            "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Kingsleaguelogo.png/250px-Kingsleaguelogo.png",
+            "esporte": "Fut7",
+            "data_inicio": "01/01/2026",
+            "data_fim": "31/12/2026"
+        },
+        {
+            "id": 2,
+            "nome": "Copa do Brasil",
+            "logo": "https://logodownload.org/wp-content/uploads/2018/10/copa-do-brasil-logo-1.png",
+            "esporte": "Futebol",
+            "data_inicio": "01/02/2026",
+            "data_fim": "30/11/2026"
+        },
+        {
+            "id": 3,
+            "nome": "NBA",
+            "logo": "https://cdn.freebiesupply.com/images/large/2x/nba-logo-transparent.png",
+            "esporte": "Basquete",
+            "data_inicio": "01/02/2026",
+            "data_fim": "30/11/2026"
+        },
+        {
+            "id": 4,
+            "nome": "Brasileirão",
+            "logo": "https://www.ogol.com.br/img/logos/edicoes/184443_imgbank_.png",
+            "esporte": "Futebol",
+            "data_inicio": "01/02/2026",
+            "data_fim": "30/11/2026"
         }
     ],
     "times": [

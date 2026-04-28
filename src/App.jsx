@@ -14,6 +14,8 @@ import CacaNiquel from './pages/JogosCassino/CacaNiquel'
 import Jokempo from './pages/JogosCassino/Jokempo'
 import BacBo from './pages/JogosCassino/BacBo'
 import JogoEsporte from './pages/JogoEsporte'
+import DetalhesTime from './pages/DetalhesTime'
+import DetalhesCampeonato from './pages/DetalhesCampeonato'
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
       <Route path="/perfil" element={<Perfil />} />
       <Route path="/perfil/personalizar" element={<Personalizar />} />
       <Route path="/jogo" element={<JogoEsporte />} />
+      <Route path="/detalhes/time" element={<DetalhesTime />} />
+      <Route path="/detalhes/campeonato" element={<DetalhesCampeonato />} />
       {/* Jogos Cassino */}
       <Route path="/roleta" element={<Roleta />} />
       <Route path="/cacaniquel" element={<CacaNiquel />} />
