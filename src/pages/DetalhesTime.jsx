@@ -6,6 +6,7 @@ function DetalhesTime() {
     const navigate = useNavigate()
     const [searchParams] = useSearchParams()
     const timeNome = searchParams.get('time')
+    const timeEsporte = searchParams.get('esporte')
     const [times, setTimes] = useState([])
     const [campeonatos, setCampeonatos] = useState([])
     useEffect(() => {
@@ -22,7 +23,7 @@ function DetalhesTime() {
         getDados()
     }, []);
     const time = times.find(t => (
-        t.nome === timeNome
+        t.nome === timeNome && t.esporte === timeEsporte
     ))
     
     if (!time) {
@@ -35,7 +36,7 @@ function DetalhesTime() {
     return (
             <main className="flex items-center flex-col h-screen w-full p-10 gap-3 text-white">
                 <span onClick={() => {navigate(-1)}} className="fixed cursor-pointer">
-                    <i className="fa-solid fa-arrow-left fixed top-3 left-19 text-4xl text-white 2xl:top-8 2xl:left-8 2xl:text-5xl"></i>
+                    <i className="fa-solid fa-arrow-left fixed top-3 left-19 text-4xl text-white 2xl:top-8 2xl:left-28 2xl:text-5xl"></i>
                 </span>
                 <span onClick={() => {navigate("/")}} className="fixed cursor-pointer">
                     <i className="fa-solid fa-house fixed top-3 left-3 text-3xl text-white 2xl:top-8 2xl:left-8 2xl:text-5xl"></i>

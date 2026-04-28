@@ -35,7 +35,7 @@ function DetalhesCampeonato() {
     return (
         <main className="flex items-center flex-col h-screen w-full p-10 gap-3 text-white">
             <span onClick={() => {navigate(-1)}} className="fixed cursor-pointer">
-                <i className="fa-solid fa-arrow-left fixed top-3 left-19 text-4xl text-white 2xl:top-8 2xl:left-8 2xl:text-5xl"></i>
+                <i className="fa-solid fa-arrow-left fixed top-3 left-19 text-4xl text-white 2xl:top-8 2xl:left-28 2xl:text-5xl"></i>
             </span>
             <span onClick={() => {navigate("/")}} className="fixed cursor-pointer">
                 <i className="fa-solid fa-house fixed top-3 left-3 text-3xl text-white 2xl:top-8 2xl:left-8 2xl:text-5xl"></i>
@@ -55,7 +55,7 @@ function DetalhesCampeonato() {
                             src={t.escudo} 
                             alt="" 
                             className="w-full aspect-square object-contain"
-                            onClick={() => {navigate(`/detalhes/time?time=${t.nome}`)}}
+                            onClick={() => {navigate(`/detalhes/time?time=${t.nome}&esporte=${t.esporte}`)}}
                         />
                     </span>
                 ))}

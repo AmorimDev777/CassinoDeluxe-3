@@ -17,12 +17,12 @@ function CardEsportes({confronto, onClick}) {
         }
         getDados()
     }, []);
-    const time1 = times.find(time => time.nome === confronto.time1)
-    const time2 = times.find(time => time.nome === confronto.time2)
     const campeonato = campeonatos.find(campeonato => campeonato.id === Number(confronto.campeonato))
+    const time1 = times.find(time => time.nome === confronto.time1 && time.esporte === campeonato.esporte)
+    const time2 = times.find(time => time.nome === confronto.time2 && time.esporte === campeonato.esporte)
 
     if (!time1 || !time2) {
-        return <div className="flex justify-center items-center fixed">Carregando...</div>
+        return <div className="flex justify-center items-center fixed top-0 left-0 h-screen w-full text-9xl text-amber-400 backdrop-blur-lg"><i class="fa-solid fa-spinner animate-[spin_0.5s_linear_infinite]"></i></div>
     }
 
     return (

@@ -86,49 +86,150 @@
     "confrontos": [
         {
             "id": 1,
-            "nome": "Loud SC x Capim FC",
             "time1": "Loud SC",
             "time2": "Capim FC",
             "esporte": "Fut7",
             "data": "01/01",
             "hora": "00:00",
             "local": "Arena Kings League",
-            "campeonato": 1
+            "campeonato": 5,
+            "odds": [
+                {
+                    "resultado_final": [
+                        {
+                            "1": 2,
+                            "x": 3,
+                            "2": 4
+                        }
+                    ],
+                    "ambas_marcam": [
+                        {
+                            "sim": 2,
+                            "nao": 3
+                        }
+                    ],
+                    "total_gols": [
+                        {
+                            "mais_de_0.5": 1,
+                            "mais_de_1.5": 2,
+                            "mais_de_2.5": 3,
+                            "mais_de_3.5": 4,
+                            "mais_de_4.5": 5,
+                            "mais_de_5.5": 6,
+                            "menos_de_0.5": 6,
+                            "menos_de_1.5": 5,
+                            "menos_de_2.5": 4,
+                            "menos_de_3.5": 3,
+                            "menos_de_4.5": 2,
+                            "menos_de_5.5": 1
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": 2,
-            "nome": "Santa Cruz x Palmeiras",
             "time1": "Santa Cruz",
             "time2": "Palmeiras",
             "esporte": "Futebol",
             "data": "02/02",
             "hora": "10:00",
             "local": "Nubank Arena",
-            "campeonato": 2
+            "campeonato": 3,
+            "odds": [
+                {
+                    "resultado_final": [
+                        {
+                            "1": 2,
+                            "x": 3,
+                            "2": 4
+                        }
+                    ],
+                    "ambas_marcam": [
+                        {
+                            "sim": 2,
+                            "nao": 3
+                        }
+                    ],
+                    "total_gols": [
+                        {
+                            "mais_de_0.5": 1,
+                            "mais_de_1.5": 2,
+                            "mais_de_2.5": 3,
+                            "mais_de_3.5": 4,
+                            "mais_de_4.5": 5,
+                            "mais_de_5.5": 6,
+                            "menos_de_0.5": 6,
+                            "menos_de_1.5": 5,
+                            "menos_de_2.5": 4,
+                            "menos_de_3.5": 3,
+                            "menos_de_4.5": 2,
+                            "menos_de_5.5": 1
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": 3,
-            "nome": "Hornets x Lakers",
             "time1": "Hornets",
             "time2": "Lakers",
             "esporte": "Basquete",
             "data": "04/04",
             "hora": "22:00",
             "local": "Aro do Basquete",
-            "campeonato": 3
+            "campeonato": 6
+        },
+        {
+            "id": 4,
+            "time1": "Sesi Bauru",
+            "time2": "Vôlei Renata",
+            "esporte": "Vôlei",
+            "data": "04/04",
+            "hora": "22:00",
+            "local": "Quadra Etec",
+            "campeonato": 7
+        },
+        {
+            "id": 5,
+            "time1": "Magnus",
+            "time2": "Palmeiras",
+            "esporte": "Futsal",
+            "data": "07/07",
+            "hora": "12:00",
+            "local": "Quadra Jumirim",
+            "campeonato": 8
+        },
+        {
+            "id": 6,
+            "time1": "Atlanta Falcons",
+            "time2": "Philadelpia Eagles",
+            "esporte": "Futebol Americano",
+            "data": "07/07",
+            "hora": "12:00",
+            "local": "Lá em casa",
+            "campeonato": 9
         }
     ],
     "campeonatos": [
         {
             "id": 1,
-            "nome": "Kings League",
-            "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Kingsleaguelogo.png/250px-Kingsleaguelogo.png",
-            "esporte": "Fut7",
-            "data_inicio": "01/01/2026",
-            "data_fim": "31/12/2026"
+            "nome": "Brasileirão Série A",
+            "logo": "https://www.ogol.com.br/img/logos/edicoes/184443_imgbank_.png",
+            "esporte": "Futebol",
+            "data_inicio": "01/02/2026",
+            "data_fim": "30/11/2026"
         },
         {
             "id": 2,
+            "nome": "Brasileirão Série C",
+            "logo": "https://image.discovery.indazn.com/jp/v4/onboarding-images/none/sn_cfesxhzb83yl8b779uv3revz1/fill/center/top/none/100/0/0/png/image/17",
+            "esporte": "Futebol",
+            "data_inicio": "01/02/2026",
+            "data_fim": "30/11/2026"
+        },
+        {
+            "id": 3,
             "nome": "Copa do Brasil",
             "logo": "https://logodownload.org/wp-content/uploads/2018/10/copa-do-brasil-logo-1.png",
             "esporte": "Futebol",
@@ -136,7 +237,23 @@
             "data_fim": "30/11/2026"
         },
         {
-            "id": 3,
+            "id": 4,
+            "nome": "Libertadores",
+            "logo": "https://image-service.onefootball.com/transform?w=256&dpr=2&image=https://images.onefootball.com/icons/leagueColoredCompetition/128/76.png",
+            "esporte": "Futebol",
+            "data_inicio": "01/02/2026",
+            "data_fim": "30/11/2026"
+        },
+        {
+            "id": 5,
+            "nome": "Kings League",
+            "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Kingsleaguelogo.png/250px-Kingsleaguelogo.png",
+            "esporte": "Fut7",
+            "data_inicio": "01/01/2026",
+            "data_fim": "31/12/2026"
+        },
+        {
+            "id": 6,
             "nome": "NBA",
             "logo": "https://cdn.freebiesupply.com/images/large/2x/nba-logo-transparent.png",
             "esporte": "Basquete",
@@ -144,10 +261,26 @@
             "data_fim": "30/11/2026"
         },
         {
-            "id": 4,
-            "nome": "Brasileirão",
-            "logo": "https://www.ogol.com.br/img/logos/edicoes/184443_imgbank_.png",
-            "esporte": "Futebol",
+            "id": 7,
+            "nome": "Superliga Vôlei",
+            "logo": "https://upload.wikimedia.org/wikipedia/pt/0/0f/Superliga_Masculina_Brasil_2021-22.png",
+            "esporte": "Vôlei",
+            "data_inicio": "01/02/2026",
+            "data_fim": "30/11/2026"
+        },
+        {
+            "id": 8,
+            "nome": "LNF",
+            "logo": "https://upload.wikimedia.org/wikipedia/pt/e/ee/LogoLNF.png",
+            "esporte": "Futsal",
+            "data_inicio": "01/02/2026",
+            "data_fim": "30/11/2026"
+        },
+        {
+            "id": 9,
+            "nome": "NFL",
+            "logo": "https://upload.wikimedia.org/wikipedia/pt/2/25/National_Football_League_2008.svg.png",
+            "esporte": "Futebol Americano",
             "data_inicio": "01/02/2026",
             "data_fim": "30/11/2026"
         }
@@ -172,7 +305,17 @@
             "nome": "Santa Cruz",
             "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Santa_Cruz_Futebol_Clube_logo.svg/1280px-Santa_Cruz_Futebol_Clube_logo.svg.png",
             "esporte": "Futebol",
-            "patrocinado": true
+            "patrocinado": true,
+            "campeonatos": [
+                {
+                    "id": 1,
+                    "campeonato_id": 2
+                },
+                {
+                    "id": 2,
+                    "campeonato_id": 3
+                }
+            ]
         },
         {
             "id": 4,

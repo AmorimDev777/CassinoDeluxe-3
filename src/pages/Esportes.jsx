@@ -31,7 +31,7 @@ function Esportes() {
                 key={index}
                 confronto={confronto}
                 onClick={() => {
-                    navigate(`/jogo?confronto=${confronto.id}&time1=${confronto.time1}&time2=${confronto.time2}`)
+                    navigate(`/jogo?confronto=${confronto.id}&time1=${confronto.time1}&time2=${confronto.time2}&esporte=${confronto.esporte}&campeonato=${confronto.campeonato}`)
                 }}/>
             ))}
         </main>
