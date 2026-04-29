@@ -286,463 +286,559 @@
         }
     ],
     "times": [
-        {
-            "id": 1,
-            "nome": "Loud SC",
-            "escudo": "https://api.draft5.gg/teams/3642/logo",
-            "esporte": "Fut7",
-            "patrocinado": true
-        },
-        {
-            "id": 2,
-            "nome": "Capim FC",
-            "escudo": "https://api.draft5.gg/teams/3717/logo",
-            "esporte": "Fut7",
-            "patrocinado": false
-        },
-        {
-            "id": 3,
-            "nome": "Santa Cruz",
-            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Santa_Cruz_Futebol_Clube_logo.svg/1280px-Santa_Cruz_Futebol_Clube_logo.svg.png",
-            "esporte": "Futebol",
-            "patrocinado": true,
-            "campeonatos": [
-                {
-                    "id": 1,
-                    "campeonato_id": 2
-                },
-                {
-                    "id": 2,
-                    "campeonato_id": 3
-                }
-            ]
-        },
-        {
-            "id": 4,
-            "nome": "Atlanta Falcons",
-            "escudo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/atl.png",
-            "esporte": "Futebol Americano",
-            "patrocinado": true
-        },
-        {
-            "id": 5,
-            "nome": "Hornets",
-            "escudo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/cha.png",
-            "esporte": "Basquete",
-            "patrocinado": true
-        },
-        {
-            "id": 6,
-            "nome": "Palmeiras",
-            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Palmeiras_logo.svg/3840px-Palmeiras_logo.svg.png",
-            "esporte": "Futebol",
-            "patrocinado": true
-        },
-        {
-            "id": 7,
-            "nome": "Lakers",
-            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Los_Angeles_Lakers_logo.svg/1280px-Los_Angeles_Lakers_logo.svg.png",
-            "esporte": "Basquete",
-            "patrocinado": false
-        },
-        {
-            "id": 8,
-            "nome": "Palmeiras",
-            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Palmeiras_logo.svg/3840px-Palmeiras_logo.svg.png",
-            "esporte": "Futsal",
-            "patrocinado": false
-        },
-        {
-            "id": 9,
-            "nome": "Philadelpia Eagles",
-            "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
-            "esporte": "Futebol Americano",
-            "patrocinado": true
-        },
-        {
-            "id": 10,
-            "nome": "Magnus",
-            "escudo": "https://upload.wikimedia.org/wikipedia/pt/thumb/b/b7/MagnusFutsal.png/250px-MagnusFutsal.png",
-            "esporte": "Futsal",
-            "patrocinado": true
-        },
-        {
-            "id": 11,
-            "nome": "Boston Celtics",
-            "escudo": "https://upload.wikimedia.org/wikipedia/pt/f/f5/Boston_Celtics.png",
-            "esporte": "Basquete",
-            "patrocinado": true
-        },
-        {
-            "id": 12,
-            "nome": "Dallas Cowboys",
-            "escudo": "https://a.espncdn.com/guid/b0fc8fb7-9dbe-e574-9008-6f0ee7c6b234/logos/primary_logo_on_white_color.png",
-            "esporte": "Futebol Americano",
-            "patrocinado": false
-        },
-        {
-            "id": 13,
-            "nome": "Saneago Goiás",
-            "escudo": "https://cbv.com.br/_next/image?url=https%3A%2F%2Fassets.soudovolei.com.br%2Fgoi_8081dca5c9.png&w=256&q=75",
-            "esporte": "Vôlei",
-            "patrocinado": false
-        },
-        {
-            "id": 14,
-            "nome": "Sesi Bauru",
-            "escudo": "https://cbv.com.br/_next/image?url=https%3A%2F%2Fassets.volleystation.com%2Fwebsite%2Fteams%2F2152451%2Fbadge.png&w=384&q=75",
-            "esporte": "Vôlei",
-            "patrocinado": true
-        },
-        {
-            "id": 15,
-            "nome": "Flamengo",
-            "escudo": "https://upload.wikimedia.org/wikipedia/commons/9/93/Flamengo-RJ_%28BRA%29.png",
-            "esporte": "Futebol",
-            "patrocinado": false
-        },
-        {
-            "id": 16,
-            "nome": "Corinthians",
-            "escudo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/874.png",
-            "esporte": "Futebol",
-            "patrocinado": false
-        },
-        {
-            "id": 17,
-            "nome": "São Paulo",
-            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/250px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png",
-            "esporte": "Futebol",
-            "patrocinado": false
-        },
-        {
-            "id": 18,
-            "nome": "Santos",
-            "escudo": "https://upload.wikimedia.org/wikipedia/commons/1/15/Santos_Logo.png",
-            "esporte": "Futebol",
-            "patrocinado": true
-        },
-        {
-            "id": 19,
-            "nome": "Grêmio",
-            "escudo": "https://upload.wikimedia.org/wikipedia/commons/0/08/Gremio_logo.svg",
-            "esporte": "Futebol",
-            "patrocinado": false
-        },
-        {
-            "id": 20,
-            "nome": "Internacional",
-            "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/1936.png",
-            "esporte": "Futebol",
-            "patrocinado": true
-        },
-        {
-            "id": 21,
-            "nome": "Cruzeiro",
-            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Cruzeiro_Esporte_Clube_%28logo%29.svg/250px-Cruzeiro_Esporte_Clube_%28logo%29.svg.png",
-            "esporte": "Futebol",
-            "patrocinado": true
-        },
-        {
-            "id": 22,
-            "nome": "Atlético Mineiro",
-            "escudo": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Atletico_mineiro_galo.png",
-            "esporte": "Futebol",
-            "patrocinado": false
-        },
-        {
-            "id": 23,
-            "nome": "Botafogo",
-            "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Botafogo_de_Futebol_e_Regatas_logo.svg/1920px-Botafogo_de_Futebol_e_Regatas_logo.svg.png",
-            "esporte": "Futebol",
-            "patrocinado": false
-        },
-        {
-            "id": 24,
-            "nome": "Vasco da Gama",
-            "escudo": "https://upload.wikimedia.org/wikipedia/pt/thumb/8/8b/EscudoDoVascoDaGama.svg/250px-EscudoDoVascoDaGama.svg.png",
-            "esporte": "Futebol",
-            "patrocinado": true
-        },
-        {
-            "id": 25,
-            "nome": "Sada Cruzeiro",
-            "escudo": "https://upload.wikimedia.org/wikipedia/pt/6/67/SadaCruzeiro2021.png",
-            "esporte": "Vôlei",
-            "patrocinado": false
-        },
-        {
-            "id": 26,
-            "nome": "Funvic Natal",
-            "escudo": "https://upload.wikimedia.org/wikipedia/pt/d/df/FUNVIC%28logo%29.png",
-            "esporte": "Vôlei",
-            "patrocinado": false
-        },
-        {
-            "id": 27,
-            "nome": "Joinville Vôlei",
-            "escudo": "https://joinvillevolei.com.br/wp-content/uploads/2022/12/logo-joinville-web.png",
-            "esporte": "Vôlei",
-            "patrocinado": false
-        },
-        {
-            "id": 28,
-            "nome": "Minas Tênis Clube",
-            "escudo": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a3/Crest_of_Minas_Tenis_Clube.svg/1280px-Crest_of_Minas_Tenis_Clube.svg.png",
-            "esporte": "Vôlei",
-            "patrocinado": false
-        },
-        {
-            "id": 29,
-            "nome": "Praia Clube",
-            "escudo": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Logo_do_Praia_com_contorno_preto.png",
-            "esporte": "Vôlei",
-            "patrocinado": false
-        },
-        {
-            "id": 30,
-            "nome": "Vôlei Renata",
-            "escudo": "https://cbv.com.br/_next/image?url=https%3A%2F%2Fassets.volleystation.com%2Fwebsite%2Fteams%2F2152676%2Fbadge.png&w=384&q=75",
-            "esporte": "Vôlei",
-            "patrocinado": true
-        },
-        {
-            "id": 31,
-            "nome": "Blumenau Vôlei",
-            "escudo": "https://upload.wikimedia.org/wikipedia/pt/thumb/6/6a/VoleiBlumenau.png/250px-VoleiBlumenau.png",
-            "esporte": "Vôlei",
-            "patrocinado": false
-        },
-        {
-            "id": 32,
-            "nome": "Montes Claros América Vôlei",
-            "escudo": "https://upload.wikimedia.org/wikipedia/pt/7/71/Logo_montes_claros.png",
-            "esporte": "Vôlei",
-            "patrocinado": false
-        },
-        {
-            "id": 33,
-            "nome": "São José Vôlei",
-            "escudo": "https://upload.wikimedia.org/wikipedia/pt/0/00/Logo_volei_sao_jose.png",
-            "esporte": "Vôlei",
-            "patrocinado": false
-        },
-        {
-            "id": 34,
-            "nome": "Itambé Minas",
-            "escudo": "https://montesclarosvolei.com.br/wp-content/uploads/2022/07/minas.png",
-            "esporte": "Vôlei",
-            "patrocinado": false
-        },
-        {
-            "id": 35,
-            "nome": "Fluxo FC",
-            "escudo": "https://api.draft5.gg/teams/3549/logo",
-            "esporte": "Fut7",
-            "patrocinado": false
-        },
-        {
-            "id": 36,
-            "nome": "Funkbol Clube",
-            "escudo": "https://arenakingsleague.com.br/wp-content/uploads/2025/02/funkbol-910x1024.png",
-            "esporte": "Fut7",
-            "patrocinado": true
-        },
-        {
-            "id": 37,
-            "nome": "Furia FC",
-            "escudo": "https://cdn.escharts.com/uploads/public/684/986/72f/68498672f3acd749030279.png",
-            "esporte": "Fut7",
-            "patrocinado": false
-        },
-        {
-            "id": 38,
-            "nome": "G3X FC",
-            "escudo": "https://arenakingsleague.com.br/wp-content/uploads/2025/02/g3x-novo1-1024x1024.png",
-            "esporte": "Fut7",
-            "patrocinado": false
-        },
-        {
-            "id": 39,
-            "nome": "Desimpain",
-            "escudo": "https://kingsleague.pro/_ipx/s_256x256/kama/production/club/2a7c5a10-34f2-4c33-8c41-7690a3f9257a/833698668.png",
-            "esporte": "Fut7",
-            "patrocinado": true
-        },
-        {
-            "id": 40,
-            "nome": "Nyvelados FC",
-            "escudo": "https://arenakingsleague.com.br/wp-content/uploads/2025/02/nivelados-e1740612342558.png",
-            "esporte": "Fut7",
-            "patrocinado": true
-        },
-        {
-            "id": 41,
-            "nome": "Dibrados FC",
-            "escudo": "https://kingsleague-cdn.kama.football/account/production/team/655471527.png",
-            "esporte": "Fut7",
-            "patrocinado": false
-        },
-        {
-            "id": 42,
-            "nome": "Dendele FC",
-            "escudo": "https://arenakingsleague.com.br/wp-content/uploads/2025/02/dendele-1-816x1024.png",
-            "esporte": "Fut7",
-            "patrocinado": true
-        },
-        {
-            "id": 43,
-            "nome": "Golden State Warriors",
-            "escudo": "https://a.espncdn.com/i/teamlogos/nba/500/gs.png",
-            "esporte": "Basquete",
-            "patrocinado": false
-        },
-        {
-            "id": 44,
-            "nome": "Chicago Bulls",
-            "escudo": "https://a.espncdn.com/i/teamlogos/nba/500/chi.png",
-            "esporte": "Basquete",
-            "patrocinado": false
-        },
-        {
-          "id": 45,
-          "nome": "Brooklyn Nets",
-          "escudo": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
-          "esporte": "Basquete",
-          "patrocinado": false
-        },
-        {
-          "id": 46,
-          "nome": "Miami Heat",
-          "escudo": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
-          "esporte": "Basquete",
-          "patrocinado": false
-        },
-        {
-          "id": 47,
-          "nome": "Milwaukee Bucks",
-          "escudo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
-          "esporte": "Basquete",
-          "patrocinado": false
-        },
-        {
-          "id": 48,
-          "nome": "Phoenix Suns",
-          "escudo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
-          "esporte": "Basquete",
-          "patrocinado": false
-        },
-        {
-          "id": 49,
-          "nome": "Denver Nuggets",
-          "escudo": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
-          "esporte": "Basquete",
-          "patrocinado": false
-        },
-        {
-          "id": 50,
-          "nome": "New York Knicks",
-          "escudo": "https://a.espncdn.com/i/teamlogos/nba/500/ny.png",
-          "esporte": "Basquete",
-          "patrocinado": false
-        },
-        {
-          "id": 51,
-          "nome": "Cleveland Cavaliers",
-          "escudo": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
-          "esporte": "Basquete",
-          "patrocinado": false
-        },
-        {
-          "id": 52,
-          "nome": "Toronto Raptors",
-          "escudo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
-          "esporte": "Basquete",
-          "patrocinado": false
-        },
-        {
-          "id": 53,
-          "nome": "Kansas City Chiefs",
-          "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
-          "esporte": "Futebol Americano",
-          "patrocinado": false
-        },
-        {
-          "id": 54,
-          "nome": "San Francisco 49ers",
-          "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
-          "esporte": "Futebol Americano",
-          "patrocinado": false
-        },
-        {
-          "id": 55,
-          "nome": "Green Bay Packers",
-          "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
-          "esporte": "Futebol Americano",
-          "patrocinado": false
-        },
-        {
-          "id": 56,
-          "nome": "New England Patriots",
-          "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
-          "esporte": "Futebol Americano",
-          "patrocinado": false
-        },
-        {
-          "id": 57,
-          "nome": "Pittsburgh Steelers",
-          "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
-          "esporte": "Futebol Americano",
-          "patrocinado": false
-        },
-        {
-          "id": 58,
-          "nome": "Buffalo Bills",
-          "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
-          "esporte": "Futebol Americano",
-          "patrocinado": false
-        },
-        {
-          "id": 59,
-          "nome": "Baltimore Ravens",
-          "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-          "esporte": "Futebol Americano",
-          "patrocinado": false
-        },
-        {
-          "id": 60,
-          "nome": "Miami Dolphins",
-          "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
-          "esporte": "Futebol Americano",
-          "patrocinado": false
-        },
-        {
-          "id": 61,
-          "nome": "Los Angeles Rams",
-          "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png",
-          "esporte": "Futebol Americano",
-          "patrocinado": false
-        },
-        {
-          "id": 62,
-          "nome": "Seattle Seahawks",
-          "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
-          "esporte": "Futebol Americano",
-          "patrocinado": false
-        },
-        {
-          "id": 63,
-          "nome": "Carlos Barbosa",
-          "escudo": "https://upload.wikimedia.org/wikipedia/pt/0/0d/EscudoACBF.png",
-          "esporte": "Futsal",
-          "patrocinado": false
-        },
-        {
-          "id": 64,
-          "nome": "Corinthians Futsal",
-          "escudo": "https://upload.wikimedia.org/wikipedia/pt/thumb/b/b4/Corinthians_simbolo.png/250px-Corinthians_simbolo.png",
-          "esporte": "Futsal",
-          "patrocinado": false
-        }
+    {
+      "id": 1,
+      "nome": "Loud SC",
+      "escudo": "https://api.draft5.gg/teams/3642/logo",
+      "esporte": "Fut7",
+      "patrocinado": true,
+      "campeonatos": [{ "id": 1, "campeonato_id": 5 }]
+    },
+    {
+      "id": 2,
+      "nome": "Capim FC",
+      "escudo": "https://api.draft5.gg/teams/3717/logo",
+      "esporte": "Fut7",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 5 }]
+    },
+    {
+      "id": 3,
+      "nome": "Santa Cruz",
+      "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Santa_Cruz_Futebol_Clube_logo.svg/1280px-Santa_Cruz_Futebol_Clube_logo.svg.png",
+      "esporte": "Futebol",
+      "patrocinado": true,
+      "campeonatos": [
+        { "id": 1, "campeonato_id": 2 },
+        { "id": 2, "campeonato_id": 3 }
+      ]
+    },
+    {
+      "id": 4,
+      "nome": "Atlanta Falcons",
+      "escudo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/atl.png",
+      "esporte": "Futebol Americano",
+      "patrocinado": true,
+      "campeonatos": [{ "id": 1, "campeonato_id": 9 }]
+    },
+    {
+      "id": 5,
+      "nome": "Hornets",
+      "escudo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/cha.png",
+      "esporte": "Basquete",
+      "patrocinado": true,
+      "campeonatos": [{ "id": 1, "campeonato_id": 6 }]
+    },
+    {
+      "id": 6,
+      "nome": "Palmeiras",
+      "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Palmeiras_logo.svg/3840px-Palmeiras_logo.svg.png",
+      "esporte": "Futebol",
+      "patrocinado": true,
+      "campeonatos": [
+        { "id": 1, "campeonato_id": 1 },
+        { "id": 2, "campeonato_id": 3 },
+        { "id": 3, "campeonato_id": 4 }
+      ]
+    },
+    {
+      "id": 7,
+      "nome": "Lakers",
+      "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Los_Angeles_Lakers_logo.svg/1280px-Los_Angeles_Lakers_logo.svg.png",
+      "esporte": "Basquete",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 6 }]
+    },
+    {
+      "id": 8,
+      "nome": "Palmeiras",
+      "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Palmeiras_logo.svg/3840px-Palmeiras_logo.svg.png",
+      "esporte": "Futsal",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 8 }]
+    },
+    {
+      "id": 9,
+      "nome": "Philadelpia Eagles",
+      "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
+      "esporte": "Futebol Americano",
+      "patrocinado": true,
+      "campeonatos": [{ "id": 1, "campeonato_id": 9 }]
+    },
+    {
+      "id": 10,
+      "nome": "Magnus",
+      "escudo": "https://upload.wikimedia.org/wikipedia/pt/thumb/b/b7/MagnusFutsal.png/250px-MagnusFutsal.png",
+      "esporte": "Futsal",
+      "patrocinado": true,
+      "campeonatos": [{ "id": 1, "campeonato_id": 8 }]
+    },
+    {
+      "id": 11,
+      "nome": "Boston Celtics",
+      "escudo": "https://upload.wikimedia.org/wikipedia/pt/f/f5/Boston_Celtics.png",
+      "esporte": "Basquete",
+      "patrocinado": true,
+      "campeonatos": [{ "id": 1, "campeonato_id": 6 }]
+    },
+    {
+      "id": 12,
+      "nome": "Dallas Cowboys",
+      "escudo": "https://a.espncdn.com/guid/b0fc8fb7-9dbe-e574-9008-6f0ee7c6b234/logos/primary_logo_on_white_color.png",
+      "esporte": "Futebol Americano",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 9 }]
+    },
+    {
+      "id": 13,
+      "nome": "Saneago Goiás",
+      "escudo": "https://cbv.com.br/_next/image?url=https%3A%2F%2Fassets.soudovolei.com.br%2Fgoi_8081dca5c9.png&w=256&q=75",
+      "esporte": "Vôlei",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 7 }]
+    },
+    {
+      "id": 14,
+      "nome": "Sesi Bauru",
+      "escudo": "https://cbv.com.br/_next/image?url=https%3A%2F%2Fassets.volleystation.com%2Fwebsite%2Fteams%2F2152451%2Fbadge.png&w=384&q=75",
+      "esporte": "Vôlei",
+      "patrocinado": true,
+      "campeonatos": [{ "id": 1, "campeonato_id": 7 }]
+    },
+    {
+      "id": 15,
+      "nome": "Flamengo",
+      "escudo": "https://upload.wikimedia.org/wikipedia/commons/9/93/Flamengo-RJ_%28BRA%29.png",
+      "esporte": "Futebol",
+      "patrocinado": false,
+      "campeonatos": [
+        { "id": 1, "campeonato_id": 1 },
+        { "id": 2, "campeonato_id": 3 },
+        { "id": 3, "campeonato_id": 4 }
+      ]
+    },
+    {
+      "id": 16,
+      "nome": "Corinthians",
+      "escudo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/874.png",
+      "esporte": "Futebol",
+      "patrocinado": false,
+      "campeonatos": [
+        { "id": 1, "campeonato_id": 1 },
+        { "id": 2, "campeonato_id": 3 }
+      ]
+    },
+    {
+      "id": 17,
+      "nome": "São Paulo",
+      "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/250px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png",
+      "esporte": "Futebol",
+      "patrocinado": false,
+      "campeonatos": [
+        { "id": 1, "campeonato_id": 1 },
+        { "id": 2, "campeonato_id": 3 },
+        { "id": 3, "campeonato_id": 4 }
+      ]
+    },
+    {
+      "id": 18,
+      "nome": "Santos",
+      "escudo": "https://upload.wikimedia.org/wikipedia/commons/1/15/Santos_Logo.png",
+      "esporte": "Futebol",
+      "patrocinado": true,
+      "campeonatos": [
+        { "id": 1, "campeonato_id": 1 },
+        { "id": 2, "campeonato_id": 3 }
+      ]
+    },
+    {
+      "id": 19,
+      "nome": "Grêmio",
+      "escudo": "https://upload.wikimedia.org/wikipedia/commons/0/08/Gremio_logo.svg",
+      "esporte": "Futebol",
+      "patrocinado": false,
+      "campeonatos": [
+        { "id": 1, "campeonato_id": 1 },
+        { "id": 2, "campeonato_id": 3 },
+        { "id": 3, "campeonato_id": 4 }
+      ]
+    },
+    {
+      "id": 20,
+      "nome": "Internacional",
+      "escudo": "https://a.espncdn.com/i/teamlogos/soccer/500/1936.png",
+      "esporte": "Futebol",
+      "patrocinado": true,
+      "campeonatos": [
+        { "id": 1, "campeonato_id": 1 },
+        { "id": 2, "campeonato_id": 3 }
+      ]
+    },
+    {
+      "id": 21,
+      "nome": "Cruzeiro",
+      "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Cruzeiro_Esporte_Clube_%28logo%29.svg/250px-Cruzeiro_Esporte_Clube_%28logo%29.svg.png",
+      "esporte": "Futebol",
+      "patrocinado": true,
+      "campeonatos": [
+        { "id": 1, "campeonato_id": 1 },
+        { "id": 2, "campeonato_id": 3 }
+      ]
+    },
+    {
+      "id": 22,
+      "nome": "Atlético Mineiro",
+      "escudo": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Atletico_mineiro_galo.png",
+      "esporte": "Futebol",
+      "patrocinado": false,
+      "campeonatos": [
+        { "id": 1, "campeonato_id": 1 },
+        { "id": 2, "campeonato_id": 3 },
+        { "id": 3, "campeonato_id": 4 }
+      ]
+    },
+    {
+      "id": 23,
+      "nome": "Botafogo",
+      "escudo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Botafogo_de_Futebol_e_Regatas_logo.svg/1920px-Botafogo_de_Futebol_e_Regatas_logo.svg.png",
+      "esporte": "Futebol",
+      "patrocinado": false,
+      "campeonatos": [
+        { "id": 1, "campeonato_id": 1 },
+        { "id": 2, "campeonato_id": 3 },
+        { "id": 3, "campeonato_id": 4 }
+      ]
+    },
+    {
+      "id": 24,
+      "nome": "Vasco da Gama",
+      "escudo": "https://upload.wikimedia.org/wikipedia/pt/thumb/8/8b/EscudoDoVascoDaGama.svg/250px-EscudoDoVascoDaGama.svg.png",
+      "esporte": "Futebol",
+      "patrocinado": true,
+      "campeonatos": [
+        { "id": 1, "campeonato_id": 1 },
+        { "id": 2, "campeonato_id": 3 }
+      ]
+    },
+    {
+      "id": 25,
+      "nome": "Sada Cruzeiro",
+      "escudo": "https://upload.wikimedia.org/wikipedia/pt/6/67/SadaCruzeiro2021.png",
+      "esporte": "Vôlei",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 7 }]
+    },
+    {
+      "id": 26,
+      "nome": "Funvic Natal",
+      "escudo": "https://upload.wikimedia.org/wikipedia/pt/d/df/FUNVIC%28logo%29.png",
+      "esporte": "Vôlei",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 7 }]
+    },
+    {
+      "id": 27,
+      "nome": "Joinville Vôlei",
+      "escudo": "https://joinvillevolei.com.br/wp-content/uploads/2022/12/logo-joinville-web.png",
+      "esporte": "Vôlei",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 7 }]
+    },
+    {
+      "id": 28,
+      "nome": "Minas Tênis Clube",
+      "escudo": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a3/Crest_of_Minas_Tenis_Clube.svg/1280px-Crest_of_Minas_Tenis_Clube.svg.png",
+      "esporte": "Vôlei",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 7 }]
+    },
+    {
+      "id": 29,
+      "nome": "Praia Clube",
+      "escudo": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Logo_do_Praia_com_contorno_preto.png",
+      "esporte": "Vôlei",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 7 }]
+    },
+    {
+      "id": 30,
+      "nome": "Vôlei Renata",
+      "escudo": "https://cbv.com.br/_next/image?url=https%3A%2F%2Fassets.volleystation.com%2Fwebsite%2Fteams%2F2152676%2Fbadge.png&w=384&q=75",
+      "esporte": "Vôlei",
+      "patrocinado": true,
+      "campeonatos": [{ "id": 1, "campeonato_id": 7 }]
+    },
+    {
+      "id": 31,
+      "nome": "Blumenau Vôlei",
+      "escudo": "https://upload.wikimedia.org/wikipedia/pt/thumb/6/6a/VoleiBlumenau.png/250px-VoleiBlumenau.png",
+      "esporte": "Vôlei",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 7 }]
+    },
+    {
+      "id": 32,
+      "nome": "Montes Claros América Vôlei",
+      "escudo": "https://upload.wikimedia.org/wikipedia/pt/7/71/Logo_montes_claros.png",
+      "esporte": "Vôlei",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 7 }]
+    },
+    {
+      "id": 33,
+      "nome": "São José Vôlei",
+      "escudo": "https://upload.wikimedia.org/wikipedia/pt/0/00/Logo_volei_sao_jose.png",
+      "esporte": "Vôlei",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 7 }]
+    },
+    {
+      "id": 34,
+      "nome": "Itambé Minas",
+      "escudo": "https://montesclarosvolei.com.br/wp-content/uploads/2022/07/minas.png",
+      "esporte": "Vôlei",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 7 }]
+    },
+    {
+      "id": 35,
+      "nome": "Fluxo FC",
+      "escudo": "https://api.draft5.gg/teams/3549/logo",
+      "esporte": "Fut7",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 5 }]
+    },
+    {
+      "id": 36,
+      "nome": "Funkbol Clube",
+      "escudo": "https://arenakingsleague.com.br/wp-content/uploads/2025/02/funkbol-910x1024.png",
+      "esporte": "Fut7",
+      "patrocinado": true,
+      "campeonatos": [{ "id": 1, "campeonato_id": 5 }]
+    },
+    {
+      "id": 37,
+      "nome": "Furia FC",
+      "escudo": "https://cdn.escharts.com/uploads/public/684/986/72f/68498672f3acd749030279.png",
+      "esporte": "Fut7",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 5 }]
+    },
+    {
+      "id": 38,
+      "nome": "G3X FC",
+      "escudo": "https://arenakingsleague.com.br/wp-content/uploads/2025/02/g3x-novo1-1024x1024.png",
+      "esporte": "Fut7",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 5 }]
+    },
+    {
+      "id": 39,
+      "nome": "Desimpain",
+      "escudo": "https://kingsleague.pro/_ipx/s_256x256/kama/production/club/2a7c5a10-34f2-4c33-8c41-7690a3f9257a/833698668.png",
+      "esporte": "Fut7",
+      "patrocinado": true,
+      "campeonatos": [{ "id": 1, "campeonato_id": 5 }]
+    },
+    {
+      "id": 40,
+      "nome": "Nyvelados FC",
+      "escudo": "https://arenakingsleague.com.br/wp-content/uploads/2025/02/nivelados-e1740612342558.png",
+      "esporte": "Fut7",
+      "patrocinado": true,
+      "campeonatos": [{ "id": 1, "campeonato_id": 5 }]
+    },
+    {
+      "id": 41,
+      "nome": "Dibrados FC",
+      "escudo": "https://kingsleague-cdn.kama.football/account/production/team/655471527.png",
+      "esporte": "Fut7",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 5 }]
+    },
+    {
+      "id": 42,
+      "nome": "Dendele FC",
+      "escudo": "https://arenakingsleague.com.br/wp-content/uploads/2025/02/dendele-1-816x1024.png",
+      "esporte": "Fut7",
+      "patrocinado": true,
+      "campeonatos": [{ "id": 1, "campeonato_id": 5 }]
+    },
+    {
+      "id": 43,
+      "nome": "Golden State Warriors",
+      "escudo": "https://a.espncdn.com/i/teamlogos/nba/500/gs.png",
+      "esporte": "Basquete",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 6 }]
+    },
+    {
+      "id": 44,
+      "nome": "Chicago Bulls",
+      "escudo": "https://a.espncdn.com/i/teamlogos/nba/500/chi.png",
+      "esporte": "Basquete",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 6 }]
+    },
+    {
+      "id": 45,
+      "nome": "Brooklyn Nets",
+      "escudo": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
+      "esporte": "Basquete",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 6 }]
+    },
+    {
+      "id": 46,
+      "nome": "Miami Heat",
+      "escudo": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
+      "esporte": "Basquete",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 6 }]
+    },
+    {
+      "id": 47,
+      "nome": "Milwaukee Bucks",
+      "escudo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+      "esporte": "Basquete",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 6 }]
+    },
+    {
+      "id": 48,
+      "nome": "Phoenix Suns",
+      "escudo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+      "esporte": "Basquete",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 6 }]
+    },
+    {
+      "id": 49,
+      "nome": "Denver Nuggets",
+      "escudo": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
+      "esporte": "Basquete",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 6 }]
+    },
+    {
+      "id": 50,
+      "nome": "New York Knicks",
+      "escudo": "https://a.espncdn.com/i/teamlogos/nba/500/ny.png",
+      "esporte": "Basquete",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 6 }]
+    },
+    {
+      "id": 51,
+      "nome": "Cleveland Cavaliers",
+      "escudo": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
+      "esporte": "Basquete",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 6 }]
+    },
+    {
+      "id": 52,
+      "nome": "Toronto Raptors",
+      "escudo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+      "esporte": "Basquete",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 6 }]
+    },
+    {
+      "id": 53,
+      "nome": "Kansas City Chiefs",
+      "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
+      "esporte": "Futebol Americano",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 9 }]
+    },
+    {
+      "id": 54,
+      "nome": "San Francisco 49ers",
+      "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
+      "esporte": "Futebol Americano",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 9 }]
+    },
+    {
+      "id": 55,
+      "nome": "Green Bay Packers",
+      "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
+      "esporte": "Futebol Americano",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 9 }]
+    },
+    {
+      "id": 56,
+      "nome": "New England Patriots",
+      "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
+      "esporte": "Futebol Americano",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 9 }]
+    },
+    {
+      "id": 57,
+      "nome": "Pittsburgh Steelers",
+      "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+      "esporte": "Futebol Americano",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 9 }]
+    },
+    {
+      "id": 58,
+      "nome": "Buffalo Bills",
+      "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
+      "esporte": "Futebol Americano",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 9 }]
+    },
+    {
+      "id": 59,
+      "nome": "Baltimore Ravens",
+      "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+      "esporte": "Futebol Americano",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 9 }]
+    },
+    {
+      "id": 60,
+      "nome": "Miami Dolphins",
+      "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
+      "esporte": "Futebol Americano",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 9 }]
+    },
+    {
+      "id": 61,
+      "nome": "Los Angeles Rams",
+      "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png",
+      "esporte": "Futebol Americano",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 9 }]
+    },
+    {
+      "id": 62,
+      "nome": "Seattle Seahawks",
+      "escudo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
+      "esporte": "Futebol Americano",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 9 }]
+    },
+    {
+      "id": 63,
+      "nome": "Carlos Barbosa",
+      "escudo": "https://upload.wikimedia.org/wikipedia/pt/0/0d/EscudoACBF.png",
+      "esporte": "Futsal",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 8 }]
+    },
+    {
+      "id": 64,
+      "nome": "Corinthians Futsal",
+      "escudo": "https://upload.wikimedia.org/wikipedia/pt/thumb/b/b4/Corinthians_simbolo.png/250px-Corinthians_simbolo.png",
+      "esporte": "Futsal",
+      "patrocinado": false,
+      "campeonatos": [{ "id": 1, "campeonato_id": 8 }]
+    }
     ]
 }
