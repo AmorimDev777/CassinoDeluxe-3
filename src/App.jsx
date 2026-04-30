@@ -13,6 +13,7 @@ import Roleta from './pages/JogosCassino/Roleta'
 import CacaNiquel from './pages/JogosCassino/CacaNiquel'
 import Jokempo from './pages/JogosCassino/Jokempo'
 import BacBo from './pages/JogosCassino/BacBo'
+import FruitBonanza from './pages/JogosCassino/FruitBonanza'
 import JogoEsporte from './pages/JogoEsporte'
 import DetalhesTime from './pages/DetalhesTime'
 import DetalhesCampeonato from './pages/DetalhesCampeonato'
@@ -37,6 +38,7 @@ function App() {
       <Route path="/cacaniquel" element={<CacaNiquel />} />
       <Route path="/jokempo" element={<Jokempo />} />
       <Route path="/bacbo" element={<BacBo />} />
+      <Route path="/fruitbonanza" element={<FruitBonanza />} />
       {/* Pagina não encontrada */}
       <Route path="*" element={<Erro404 />} />  {/* rota catch-all */}
     </Routes>

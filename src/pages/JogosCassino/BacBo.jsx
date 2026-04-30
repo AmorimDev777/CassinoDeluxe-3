@@ -1,8 +1,12 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import AlertBacBo from "../../components/AlertBacBo"
 
 function BacBo() {
     const [saldo, setSaldo] = useState(localStorage.getItem('saldo') || 0)
+    const [isVisible, setIsVisible] = useState(false)
+    const [statusAlert, setStatusAlert] = useState('')
+    const [alertMsg, setAlertMsg] = useState('')
     const [apostaTotal, setApostaTotal] = useState(0)
     const [dado1, setDado1] = useState('five')    
     const [dado2, setDado2] = useState('five')
@@ -27,11 +31,30 @@ function BacBo() {
 
         return botoes
     }
+    const alertar = (status, msg) => {
+        setStatusAlert(status)
+        setAlertMsg(msg)
+
+        let contador = 0
+        const max = 35
+
+        const interval = setInterval(() => {
+            setIsVisible(true)
+            contador++
+            
+            if (contador >= max) {
+                clearInterval(interval)
+                setIsVisible(false)
+            }
+        }, 100)
+    }
     const addAposta = (valor) => {
         if (Number(apostaTotal) > Number(saldo)) return 
+        console.log(Number(apostaTotal) + Number(valor))
+        if ((Number(apostaTotal) + Number(valor)) >= Number(saldo)) return setApostaTotal(Number(saldo))
         setApostaTotal(Number(valor))
     }
-    const finalizarResultado = (d1,d2,d3,d4) => {
+    const finalizarResultado = (d1,d2,d3,d4,aposta) => {
         let jogadorPontos = (dados.indexOf(d1) + 1) + (dados.indexOf(d3) + 1)
         let bancaPontos = (dados.indexOf(d2) + 1) + (dados.indexOf(d4) + 1)
         console.log("Jogador - " + jogadorPontos)
@@ -43,27 +66,36 @@ function BacBo() {
             ? 'Banca Ganhou'
             : 'Empate'
         )
+        if (jogadorPontos > bancaPontos) {
+            alertar('Ganhou', 'Jogador Ganhou')
+        }
+        else if (jogadorPontos < bancaPontos) {
+            alertar('Perdeu', 'Banca Ganhou')
+        }
+        else {
+            alertar('Empate', 'Empate')
+        }
     }
-    const girarDados = () => {
+    const girarDados = (aposta) => {
 
-            if (isSpinningDado4) return console.log('Ainda girando...')
+        if (isSpinningDado4) return console.log('Ainda girando...')
 
-            setIsSpinningDado1(true)
-            setIsSpinningDado2(true)
-            setIsSpinningDado3(true)
-            setIsSpinningDado4(true)
+        setIsSpinningDado1(true)
+        setIsSpinningDado2(true)
+        setIsSpinningDado3(true)
+        setIsSpinningDado4(true)
 
-            let contador1 = 0
-            let contador2 = 0
-            let contador3 = 0
-            let contador4 = 0
-            let d1 = ''
-            let d2 = ''
-            let d3 = ''
-            let d4 = ''
-            const maxGiros = 20
+        let contador1 = 0
+        let contador2 = 0
+        let contador3 = 0
+        let contador4 = 0
+        let d1 = ''
+        let d2 = ''
+        let d3 = ''
+        let d4 = ''
+        const maxGiros = 20
 
-            const interval = setInterval(() => {
+        const interval = setInterval(() => {
             if (contador1 < 5) {
                 d1 = dados[Math.floor(Math.random() * dados.length)]
                 setDado1(d1)
@@ -88,13 +120,19 @@ function BacBo() {
             if (contador4 >= maxGiros) {
                 clearInterval(interval)
                 setIsSpinningDado4(false)
-                finalizarResultado(d1,d2,d3,d4)
+                finalizarResultado(d1,d2,d3,d4,aposta)
             }
         }, 200)
     }
 
     return (
         <main className="flex justify-center items-start relative h-screen w-full">
+            {isVisible ?
+                (<AlertBacBo 
+                status={statusAlert} 
+                msg={alertMsg}
+                />) : (<p></p>)
+            }
             <div className="divScreenControls flex justify-center items-end h-screen w-screen absolute
             p-5"
             >
@@ -126,25 +164,28 @@ function BacBo() {
                     text-white aspect-2/1 rounded-2xl overflow-hidden"
                     >
                         <div className="flex justify-between items-start flex-col h-full w-[50%] p-3 
-                        bg-blue-700"
+                        bg-blue-700 cursor-pointer transition-all duration-300 hover:brightness-[.7]"
+                            onClick={() => {girarDados('Jogador')}}
                         >
                             <h1 className="text-xs text-zinc-300">2.00X</h1>
                             <h1 className="text-lg">Jogador</h1>
                         </div>
                         <div className="flex justify-center items-center absolute h-[90%] bg-green-600 
-                        border-4 border-zinc-300 text-xl aspect-square rounded-full"
+                        border-4 border-zinc-300 text-xl aspect-square rounded-full cursor-pointer z-10 transition-all duration-300 hover:brightness-[.7]"
+                            onClick={() => {girarDados('Empate')}}
                         >
                             <h1>Empate</h1>
                         </div>
                         <div className="flex justify-between items-end flex-col h-full w-[50%] p-3 
-                        bg-red-500"
+                        bg-red-500 cursor-pointer transition-all duration-300 hover:brightness-[.7]"
+                            onClick={() => {girarDados('Banca')}}
                         >
                             <h1 className="text-xs text-zinc-300">2.00X</h1>
                             <h1 className="text-lg">Banca</h1>
                         </div>
                     </div>
                     <div className="divFichas flex items-center relative w-full gap-2">
-                        <button className="btnVoltar -left-2 -translate-x-full" title="Tudo" onClick={() => {addAposta(Number(saldo)), girarDados()}}>
+                        <button className="btnVoltar -left-2 -translate-x-full" title="Tudo" onClick={() => {addAposta(Number(saldo))}}>
                             <i className="fa-solid fa-wallet"></i>
                         </button>
                         <button className="ficha cinza" onClick={() => {addAposta(Number(apostaTotal) + 1)}}><p>1</p></button>
