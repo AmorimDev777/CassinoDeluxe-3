@@ -159,7 +159,7 @@ function Jokempo() {
                     onClick={apostar}
                 >Apostar</button>
                 <button
-                    className="absolute bottom-0 right-0 translate-x-[calc(100%+20px)] text-4xl text-white cursor-pointer transition-all duration-200 hover:brightness-[.8]"
+                    className="absolute bottom-0 translate-y-[calc(100%+20px)] text-4xl text-white cursor-pointer transition-all duration-200 hover:brightness-[.8] min-[460px]:right-0 min-[460px]:translate-x-[calc(100%+20px)] min-[460px]:translate-y-0"
                     onClick={() => setModalStatus(!modalStatus)}
                     >
                     <i className="fa-solid fa-circle-info"></i>

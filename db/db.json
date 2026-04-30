@@ -93,37 +93,41 @@
             "hora": "00:00",
             "local": "Arena Kings League",
             "campeonato": 5,
-            "odds": [
+            "apostas": [
                 {
-                    "resultado_final": [
-                        {
-                            "1": 2,
-                            "x": 3,
-                            "2": 4
-                        }
-                    ],
-                    "ambas_marcam": [
-                        {
-                            "sim": 2,
-                            "nao": 3
-                        }
-                    ],
-                    "total_gols": [
-                        {
-                            "mais_de_0.5": 1,
-                            "mais_de_1.5": 2,
-                            "mais_de_2.5": 3,
-                            "mais_de_3.5": 4,
-                            "mais_de_4.5": 5,
-                            "mais_de_5.5": 6,
-                            "menos_de_0.5": 6,
-                            "menos_de_1.5": 5,
-                            "menos_de_2.5": 4,
-                            "menos_de_3.5": 3,
-                            "menos_de_4.5": 2,
-                            "menos_de_5.5": 1
-                        }
-                    ]
+                    "tipo": "Resultado Final", 
+                    "num_colunas": 3,
+                    "opcoes": {
+                        "1": 2,
+                        "x": 3,
+                        "2": 4
+                    }
+                },
+                {
+                    "tipo": "Ambas Marcam", 
+                    "num_colunas": 2,
+                    "opcoes": {
+                        "sim": 2,
+                        "nao": 3
+                    }
+                },
+                {
+                    "tipo": "Total de Gols",
+                    "num_colunas": 2, 
+                    "opcoes": {
+                        "mais_de_0.5": 1,
+                        "mais_de_1.5": 2,
+                        "mais_de_2.5": 3,
+                        "mais_de_3.5": 4,
+                        "mais_de_4.5": 5,
+                        "mais_de_5.5": 6,
+                        "menos_de_0.5": 6,
+                        "menos_de_1.5": 5,
+                        "menos_de_2.5": 4,
+                        "menos_de_3.5": 3,
+                        "menos_de_4.5": 2,
+                        "menos_de_5.5": 1
+                    }
                 }
             ]
         },
@@ -136,37 +140,41 @@
             "hora": "10:00",
             "local": "Nubank Arena",
             "campeonato": 3,
-            "odds": [
+            "apostas": [
                 {
-                    "resultado_final": [
-                        {
-                            "1": 2,
-                            "x": 3,
-                            "2": 4
-                        }
-                    ],
-                    "ambas_marcam": [
-                        {
-                            "sim": 2,
-                            "nao": 3
-                        }
-                    ],
-                    "total_gols": [
-                        {
-                            "mais_de_0.5": 1,
-                            "mais_de_1.5": 2,
-                            "mais_de_2.5": 3,
-                            "mais_de_3.5": 4,
-                            "mais_de_4.5": 5,
-                            "mais_de_5.5": 6,
-                            "menos_de_0.5": 6,
-                            "menos_de_1.5": 5,
-                            "menos_de_2.5": 4,
-                            "menos_de_3.5": 3,
-                            "menos_de_4.5": 2,
-                            "menos_de_5.5": 1
-                        }
-                    ]
+                    "tipo": "Resultado Final", 
+                    "num_colunas": 3,
+                    "opcoes": {
+                        "1": 2,
+                        "x": 3,
+                        "2": 4
+                    }
+                },
+                {
+                    "tipo": "Ambas Marcam", 
+                    "num_colunas": 2,
+                    "opcoes": {
+                        "sim": 2,
+                        "nao": 3
+                    }
+                },
+                {
+                    "tipo": "Total de Gols",
+                    "num_colunas": 2, 
+                    "opcoes": {
+                        "mais_de_0.5": 1,
+                        "mais_de_1.5": 2,
+                        "mais_de_2.5": 3,
+                        "mais_de_3.5": 4,
+                        "mais_de_4.5": 5,
+                        "mais_de_5.5": 6,
+                        "menos_de_0.5": 6,
+                        "menos_de_1.5": 5,
+                        "menos_de_2.5": 4,
+                        "menos_de_3.5": 3,
+                        "menos_de_4.5": 2,
+                        "menos_de_5.5": 1
+                    }
                 }
             ]
         },

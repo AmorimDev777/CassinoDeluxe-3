@@ -6,7 +6,6 @@ import Navbar from "../components/Navbar"
 
 function Esportes() {
     const navigate = useNavigate()
-
     const [saldo, setSaldo] = useState(localStorage.getItem('saldo') || 0)
     const [confrontos, setConfrontos] = useState([])
     const [times, setTimes] = useState([])

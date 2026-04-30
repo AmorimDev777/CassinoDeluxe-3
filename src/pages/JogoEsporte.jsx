@@ -42,62 +42,81 @@ function JogoEsporte() {
     const time2 = times.find(t => (
         t.nome === time2Nome && t.esporte === esporteNome
     ))
+    if (!confronto || !campeonato || !time1 || !time2) {
+        return <div className="flex justify-center items-center fixed top-0 left-0 h-screen w-full text-9xl text-amber-400 backdrop-blur-lg"><i className="fa-solid fa-spinner animate-[spin_0.5s_linear_infinite]"></i></div>
+    }
     return (
         <>
             <SetaVoltar to="/esportes" />  
             <SaldoCassino value={`R$ ${Number(saldo).toFixed(2).replace('.', ',')}`} />
-            {confrontos.map((c, index) => {
-                if (c.id != confrontoId) return
-                return (
-                    <main key={index} className="flex justify-center items-center flex-col pt-15 gap-5">
-                        <div className="w-[70%] bg-zinc-300 rounded-xl overflow-hidden">
-                            <span className="flex justify-center items-center p-2 gap-2 bg-white">
-                                <img 
-                                    src={campeonato.logo} 
-                                    alt="" 
-                                    className="h-5 aspect-square object-contain cursor-pointer" 
-                                    onClick={() => {navigate(`/detalhes/campeonato?campeonato=${campeonato.id}`)}}
-                                />
-                                <h1>{campeonato.nome}</h1>
-                                <h1 className="text-zinc-800">{confronto.data}</h1>
-                                <h1 className="text-zinc-800">{confronto.hora}</h1>
-                            </span>
-                            <span className="flex justify-between items-center p-4">
-                                <span className="flex justify-center items-center gap-3">
-                                    <img src={time1.escudo} alt="" className="w-15 cursor-pointer" onClick={() => {navigate(`/detalhes/time?time=${time1.nome}&esporte=${time1.esporte}`)}}/>
-                                    <h1>{time1.nome}</h1>
-                                </span>
-                                <i className="fa-solid fa-xmark"></i>
-                                <span className="flex justify-center items-center gap-3">
-                                    <h1>{time2.nome}</h1>
-                                    <img src={time2.escudo} alt="" className="w-15 cursor-pointer" onClick={() => {navigate(`/detalhes/time?time=${time2.nome}&esporte=${time2.esporte}`)}}/>
-                                </span>
-                            </span>
-                        </div>
+            <main className="flex justify-center items-center flex-col pt-15 gap-5">
+                <div className="w-[70%] bg-zinc-300 rounded-xl overflow-hidden">
+                    <span className="flex justify-center items-center p-2 gap-2 bg-white">
+                        <img 
+                            src={campeonato.logo} 
+                            alt="" 
+                            className="h-5 aspect-square object-contain cursor-pointer" 
+                            onClick={() => {navigate(`/detalhes/campeonato?campeonato=${campeonato.id}`)}}
+                        />
+                        <h1>{campeonato.nome}</h1>
+                        <h1 className="text-zinc-800">{confronto.data}</h1>
+                        <h1 className="text-zinc-800">{confronto.hora}</h1>
+                    </span>
+                    <span className="flex justify-between items-center p-4">
+                        <span className="flex justify-center items-center gap-3">
+                            <img src={time1.escudo} alt="" className="w-15 cursor-pointer" onClick={() => {navigate(`/detalhes/time?time=${time1.nome}&esporte=${time1.esporte}`)}}/>
+                            <h1>{time1.nome}</h1>
+                        </span>
+                        <i className="fa-solid fa-xmark"></i>
+                        <span className="flex justify-center items-center gap-3">
+                            <h1>{time2.nome}</h1>
+                            <img src={time2.escudo} alt="" className="w-15 cursor-pointer" onClick={() => {navigate(`/detalhes/time?time=${time2.nome}&esporte=${time2.esporte}`)}}/>
+                        </span>
+                    </span>
+                </div>
+                <div className="flex flex-col w-[70%] p-5 gap-4 bg-zinc-300 rounded-xl">
+                    {confronto.apostas && confronto.apostas.length > 0 ?
+                        (confronto.apostas.map((a) => {
+                            const opcoes = Object.entries(a.opcoes)
+                            const colunas = opcoes.length <= 2 ? 2 : opcoes.length >= 4 ? 2 : 3
+                            return (
+                                <div 
+                                  key={a.tipo} 
+                                  className="flex flex-col gap-2 bg-white p-3 rounded-md shadow-md 
+                                  shadow-black/30"
+                                >
+                                    <span className="flex justify-between items-center">
+                                        <h1 className="font-semibold">{a.tipo}</h1>
+                                        <i className="fa-solid fa-chevron-up"></i>
+                                    </span>
+                                    <div className="grid gap-2" style={{ gridTemplateColumns: `repeat(${colunas}, 1fr)` }}>
+                                        {opcoes.map(([chave, valor]) => {
+                                            const chaveFormatada = chave
+                                            .replaceAll("_", " ")
+                                            .replace("mais de", "+")
+                                            .replace("menos de", "-")
+                                            .replace("sim", "Sim")
+                                            .replace("nao", "Não")
 
-                        <div className="flex flex-col w-[70%] p-5 gap-3 bg-zinc-300 rounded-xl overflow-hidden">
-                            <div className="flex justify-center flex-col w-full h-10 p-3 bg-white shadow-md shadow-black/40 rounded-md">
-                                <span className="flex justify-between items-center">
-                                    <h1>Resultado Final</h1>
-                                    <i className="fa-solid fa-chevron-up"></i>
-                                </span>
-                            </div>
-                            <div className="flex justify-center flex-col w-full h-10 p-3 bg-white shadow-md shadow-black/40 rounded-md">
-                                <span className="flex justify-between items-center">
-                                    <h1>Ambas Marcam</h1>
-                                    <i className="fa-solid fa-chevron-up"></i>
-                                </span>
-                            </div>
-                            <div className="flex justify-center flex-col w-full h-10 p-3 bg-white shadow-md shadow-black/40 rounded-md">
-                                <span className="flex justify-between items-center">
-                                    <h1>Total Gols</h1>
-                                    <i className="fa-solid fa-chevron-up"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </main>
-                )
-            })}
+                                            return (
+                                              <button
+                                                key={chave}
+                                                className="flex justify-between items-center px-3 py-2 bg-zinc-100 border-2 
+                                                border-zinc-300 transition rounded-md cursor-pointer hover:brightness-[.9]"
+                                                onClick={() => console.log(a.tipo, chave, valor)}
+                                              >
+                                                <span className="text-sm">{chaveFormatada}</span>
+                                                <span className="font-bold">{valor.toFixed(2)}</span>
+                                              </button>
+                                            )
+                                        })}
+                                    </div>
+                                </div>
+                            )
+                        })) : (<p className="w-full text-center">Jogo sem odds</p>)
+                    }
+                </div>
+            </main>
         </>
     )
 }

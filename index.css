@@ -169,3 +169,171 @@ input::-webkit-inner-spin-button {
         @apply flex items-center p-5 gap-5 bg-white/50 text-white rounded-xl
     }
 }
+.divScreenControls {
+    .btnVoltar, .btnApagar {
+        @apply flex justify-center items-center absolute h-12 w-12 p-5 bg-black/50 border-2 border-zinc-700 
+        text-white rounded-full z-3 cursor-pointer transition-all duration-300 hover:brightness-[.6]
+    }
+    .divFichas {
+        .ficha {
+            @apply flex justify-center items-center relative h-14 p-5 border-2 rounded-full aspect-square cursor-pointer
+            transition-all duration-300 hover:brightness-[.7];
+            p {
+                @apply absolute z-2
+            }
+        }
+        .ficha::before {
+            content: '';
+            position: absolute;
+
+            border: solid 4px black;
+            border-radius: 50rem;
+            height: 70%;
+            width: 70%;
+        }
+        .cinza {
+          background: conic-gradient(
+            black 0deg 30deg,
+            rgb(134, 134, 134) 30deg 60deg,
+            black 60deg 90deg,
+            rgb(134, 134, 134) 90deg 120deg,
+            black 120deg 150deg,
+            rgb(134, 134, 134) 150deg 180deg,
+            black 180deg 210deg,
+            rgb(134, 134, 134) 210deg 240deg,
+            black 240deg 270deg,
+            rgb(134, 134, 134) 270deg 300deg,
+            black 300deg 330deg,
+            rgb(134, 134, 134) 330deg 360deg
+          );
+          border-color: rgb(134, 134, 134);
+        }
+        .cinza::before {
+            background: rgb(134, 134, 134);
+        }
+        .verde {
+          background: conic-gradient(
+            black 0deg 30deg,
+            green 30deg 60deg,
+            black 60deg 90deg,
+            green 90deg 120deg,
+            black 120deg 150deg,
+            green 150deg 180deg,
+            black 180deg 210deg,
+            green 210deg 240deg,
+            black 240deg 270deg,
+            green 270deg 300deg,
+            black 300deg 330deg,
+            green 330deg 360deg
+          );
+          border-color: green;
+        }
+        .verde::before {
+            background: green;
+        }
+        .azul {
+          background: conic-gradient(
+            black 0deg 30deg,
+            blue 30deg 60deg,
+            black 60deg 90deg,
+            blue 90deg 120deg,
+            black 120deg 150deg,
+            blue 150deg 180deg,
+            black 180deg 210deg,
+            blue 210deg 240deg,
+            black 240deg 270deg,
+            blue 270deg 300deg,
+            black 300deg 330deg,
+            blue 330deg 360deg
+          );
+          border-color: blue;
+        }
+        .azul::before {
+            background: blue;
+        }
+        .vermelha {
+          background: conic-gradient(
+            black 0deg 30deg,
+            red 30deg 60deg,
+            black 60deg 90deg,
+            red 90deg 120deg,
+            black 120deg 150deg,
+            red 150deg 180deg,
+            black 180deg 210deg,
+            red 210deg 240deg,
+            black 240deg 270deg,
+            red 270deg 300deg,
+            black 300deg 330deg,
+            red 330deg 360deg
+          );
+          border-color: red;
+        }
+        .vermelha::before {
+            background: red;
+        }
+        .branca {
+            background: conic-gradient(
+              black 0deg 30deg,
+              white 30deg 60deg,
+              black 60deg 90deg,
+              white 90deg 120deg,
+              black 120deg 150deg,
+              white 150deg 180deg,
+              black 180deg 210deg,
+              white 210deg 240deg,
+              black 240deg 270deg,
+              white 270deg 300deg,
+              black 300deg 330deg,
+              white 330deg 360deg
+            );
+            border-color: white;
+        }
+        .branca::before {
+            background: white;
+        }
+        .dourada {
+          background: conic-gradient(
+            black 0deg 30deg,
+            #D3AF37 30deg 60deg,
+            black 60deg 90deg,
+            #D3AF37 90deg 120deg,
+            black 120deg 150deg,
+            #D3AF37 150deg 180deg,
+            black 180deg 210deg,
+            #D3AF37 210deg 240deg,
+            black 240deg 270deg,
+            #D3AF37 270deg 300deg,
+            black 300deg 330deg,
+            #D3AF37 330deg 360deg
+          );
+          border-color: #D3AF37;
+        }
+        .dourada:before {
+            background: #D3AF37;
+        }
+    }
+}
+.gridDados {
+    .espaco {
+        @apply flex justify-center items-center bg-zinc-600 rounded-full text-5xl;
+        i {
+            @apply flex justify-center items-center h-10 bg-white aspect-square rounded-md
+        }
+    };
+    .diceAnim {
+      animation: spinBounce 0.8s infinite linear;
+      display: inline-block;
+    }
+}
+
+@keyframes spinBounce {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}

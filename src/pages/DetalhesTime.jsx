@@ -30,9 +30,10 @@ function DetalhesTime() {
         return <p className="text-white">Carregando...</p>
     }
 
-    const campeonatosTime = campeonatos.filter(c => (
-        c.esporte === time.esporte
+    const campeonatosTime = campeonatos.filter(campeonato => (
+        time.campeonatos?.some(c => Number(c.campeonato_id) === Number(campeonato.id))
     ))
+
     return (
             <main className="flex items-center flex-col h-screen w-full p-10 gap-3 text-white">
                 <span onClick={() => {navigate(-1)}} className="fixed cursor-pointer">
@@ -44,18 +45,22 @@ function DetalhesTime() {
                 <img src={time.escudo} alt="" className="h-50 aspect-square object-contain"/>
                 <h1 className="text-4xl">{time.nome}</h1>
                 <h2 className="text-2xl">{time.esporte}</h2>
-                <div className="grid justify-start items-start grid-cols-6 w-full px-10 gap-10">
-                {campeonatosTime.map((c, i) => (
-                    <span key={i} className="aspect-square cursor-pointer transition-all duration-200 hover:scale-[1.15]">
-                        <img 
-                            src={c.logo} 
-                            alt="" 
-                            className="w-full aspect-square object-contain"
-                            onClick={() => {navigate(`/detalhes/campeonato?campeonato=${c.id}`)}}
-                        />
-                    </span>
-                ))}
-                </div>
+                {campeonatosTime && campeonatosTime.length > 0 ? (
+                    <div className="grid justify-start items-start grid-cols-6 w-full px-10 gap-10">
+                        {campeonatosTime.map((c, i) => (
+                            <span key={i} className="aspect-square cursor-pointer transition-all duration-200 hover:scale-[1.15]">
+                                <img 
+                                    src={c.logo} 
+                                    alt="" 
+                                    className="w-full aspect-square object-contain"
+                                    onClick={() => {navigate(`/detalhes/campeonato?campeonato=${c.id}`)}}
+                                />
+                            </span>
+                        ))}
+                    </div>
+                ) : (
+                    <p className="w-full text-center">Nenhum campeonato encontrado para este time</p>
+                )}
             </main>
     )
 }

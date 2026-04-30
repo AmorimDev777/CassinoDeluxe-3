@@ -29,14 +29,9 @@ function DetalhesCampeonato() {
         return <div className="flex justify-center items-center fixed top-0 left-0 h-screen w-full text-9xl text-amber-400 backdrop-blur-lg"><i className="fa-solid fa-spinner animate-[spin_0.5s_linear_infinite]"></i></div>
     }
     
-    const timesEsporte = times.filter(t => 
-        t.esporte === campeonato.esporte
-    )
-    
-// Filtra os times que pertencem ao campeonato atual
-const timesCampeonato = times.filter(t => 
-    t.campeonatos?.some(c => Number(c.campeonato_id) === Number(campeonato.id))
-);
+    const timesCampeonato = times.filter(t => 
+        t.campeonatos?.some(c => Number(c.campeonato_id) === Number(campeonato.id))
+    );
     return (
         <main className="flex items-center flex-col h-screen w-full p-10 gap-3 text-white">
             <span onClick={() => {navigate(-1)}} className="fixed cursor-pointer">
@@ -53,16 +48,6 @@ const timesCampeonato = times.filter(t =>
                 <p>Até</p>
                 <h1>{campeonato.data_fim}</h1>
             </span>
-                {timesCampeonato.map((t, i) => (
-                    <span key={i} className="aspect-square cursor-pointer transition-all duration-200 hover:scale-[1.15]">
-                        <img 
-                            src={t.escudo} 
-                            alt="" 
-                            className="w-full aspect-square object-contain"
-                            onClick={() => {navigate(`/detalhes/time?time=${t.nome}&esporte=${t.esporte}`)}}
-                        />
-                    </span>
-                ))}
                 {timesCampeonato && timesCampeonato.length > 0 ? (
                     <div className="grid justify-start items-start grid-cols-6 w-full px-10 gap-10">
                         {timesCampeonato.map((t, i) => (
@@ -77,7 +62,7 @@ const timesCampeonato = times.filter(t =>
                         ))}
                     </div>
                 ) : (
-                    <p className="w-full text-center">Nenhum time encontrado para este campeonato.</p>
+                    <p className="w-full text-center">Nenhum time encontrado para este campeonato</p>
                 )}
             
         </main>
