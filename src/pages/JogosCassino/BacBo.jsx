@@ -7,6 +7,7 @@ function BacBo() {
     const [isVisible, setIsVisible] = useState(false)
     const [statusAlert, setStatusAlert] = useState('')
     const [alertMsg, setAlertMsg] = useState('')
+    const [selectedOption, setSelectedOption] = useState('')
     const [apostaTotal, setApostaTotal] = useState(0)
     const [dado1, setDado1] = useState('five')    
     const [dado2, setDado2] = useState('five')
@@ -49,36 +50,60 @@ function BacBo() {
         }, 100)
     }
     const addAposta = (valor) => {
-        if (Number(apostaTotal) > Number(saldo)) return 
-        console.log(Number(apostaTotal) + Number(valor))
-        if ((Number(apostaTotal) + Number(valor)) >= Number(saldo)) return setApostaTotal(Number(saldo))
-        setApostaTotal(Number(valor))
+        if (Number(apostaTotal) >= Number(saldo)) return
+        if (Number(apostaTotal) > 999999) {
+            setApostaTotal(999999)
+            return
+        }
+        const novoValor = Number(apostaTotal) + Number(valor)
+        if (novoValor >= Number(saldo)) {
+            setApostaTotal(Number(saldo))
+        } else {
+            setApostaTotal(novoValor)
+        }
     }
     const finalizarResultado = (d1,d2,d3,d4,aposta) => {
         let jogadorPontos = (dados.indexOf(d1) + 1) + (dados.indexOf(d3) + 1)
         let bancaPontos = (dados.indexOf(d2) + 1) + (dados.indexOf(d4) + 1)
-        console.log("Jogador - " + jogadorPontos)
-        console.log("Banca - " + bancaPontos)
-        console.log(
-            jogadorPontos > bancaPontos 
-            ? 'Jogador Ganhou'
-            : jogadorPontos < bancaPontos 
-            ? 'Banca Ganhou'
-            : 'Empate'
-        )
-        if (jogadorPontos > bancaPontos) {
-            alertar('Ganhou', 'Jogador Ganhou')
-        }
-        else if (jogadorPontos < bancaPontos) {
-            alertar('Perdeu', 'Banca Ganhou')
+        let odd = aposta === 'Empate' ? 8 : 2
+        if (aposta !== 'Empate') {
+            if (aposta === 'Jogador') {
+                if (jogadorPontos > bancaPontos) {
+                    setSaldo((Number(saldo) - Number(apostaTotal)) + (Number(apostaTotal) * odd))
+                    alertar('Jogador', 'Jogador Ganhou')
+                }
+                else {
+                    setSaldo(Number(saldo) - Number(apostaTotal))
+                    alertar('Banca', 'Banca Ganhou')
+                }
+            }
+            else {
+                if (jogadorPontos < bancaPontos) {
+                    setSaldo((Number(saldo) - Number(apostaTotal)) + (Number(apostaTotal) * odd))
+                    alertar('Banca', 'Banca Ganhou')
+                }
+                else {
+                    setSaldo(Number(saldo) - Number(apostaTotal))
+                    alertar('Jogador', 'Jogador Ganhou')
+                }
+            }
         }
         else {
-            alertar('Empate', 'Empate')
+            if (jogadorPontos === bancaPontos) {
+                alertar('Empate', 'Empate')
+                setSaldo((Number(saldo) - Number(apostaTotal)) + (Number(apostaTotal) * odd))
+            }
+            else {
+                setSaldo(Number(saldo) - Number(apostaTotal))
+            }
         }
     }
     const girarDados = (aposta) => {
 
         if (isSpinningDado4) return console.log('Ainda girando...')
+        if (Number(apostaTotal) <= 0) return alert('Valor inválido')
+        if (Number(saldo) < Number(apostaTotal)) return alert('Saldo indisponível')
+        if (selectedOption === '') return alert('Selecione alguma opção')
 
         setIsSpinningDado1(true)
         setIsSpinningDado2(true)
@@ -131,7 +156,7 @@ function BacBo() {
                 (<AlertBacBo 
                 status={statusAlert} 
                 msg={alertMsg}
-                />) : (<p></p>)
+                />) : ('')
             }
             <div className="divScreenControls flex justify-center items-end h-screen w-screen absolute
             p-5"
@@ -148,6 +173,7 @@ function BacBo() {
                 <div className="flex absolute left-5 gap-3">
                     <span className="flex justify-center items-center flex-col py-2 px-6 bg-black/50 
                     border-2 border-zinc-700 rounded-full"
+                        onClick={() => {setApostaTotal(Number(saldo))}}
                     >
                         <h1 className="text-xs text-white">Saldo</h1>
                         <p className="text-sm text-amber-400">R$ {Number(saldo).toFixed(2).replace('.', ',')}</p>
@@ -163,38 +189,42 @@ function BacBo() {
                     <div className="flex justify-center items-center relative h-45 gap-1 bg-zinc-300 
                     text-white aspect-2/1 rounded-2xl overflow-hidden"
                     >
-                        <div className="flex justify-between items-start flex-col h-full w-[50%] p-3 
-                        bg-blue-700 cursor-pointer transition-all duration-300 hover:brightness-[.7]"
-                            onClick={() => {girarDados('Jogador')}}
+                        <div className={`flex justify-between items-start flex-col relative h-full w-[50%] p-3 
+                            bg-blue-700 cursor-pointer transition-all duration-300 ${selectedOption === 'Jogador' ? 'brightness-[.6]' : 'hover:brightness-[.85]'}`}
+                            onClick={() => {setSelectedOption('Jogador')}}
                         >
                             <h1 className="text-xs text-zinc-300">2.00X</h1>
+                            {selectedOption === 'Jogador' && apostaTotal > 0 ? <div className={`brightness-[1.4] hover:brightness-[1.4]! ficha ${apostaTotal < 5 ? 'cinza' : apostaTotal < 25 ? 'verde' : apostaTotal < 100 ? 'azul' : apostaTotal < 500 ? 'vermelha' : apostaTotal < 1000 ? 'branca' : 'dourada'} ${apostaTotal <= 999 ? 'text-sm' : apostaTotal > 99999 ? 'text-[7px]' : 'text-[9px]'}`}><p>{apostaTotal}</p></div> : ''}
                             <h1 className="text-lg">Jogador</h1>
                         </div>
-                        <div className="flex justify-center items-center absolute h-[90%] bg-green-600 
-                        border-4 border-zinc-300 text-xl aspect-square rounded-full cursor-pointer z-10 transition-all duration-300 hover:brightness-[.7]"
-                            onClick={() => {girarDados('Empate')}}
+                        <div className={`flex justify-center items-center flex-col absolute h-[90%] bg-green-600 
+                        border-4 border-zinc-300 text-xl aspect-square rounded-full cursor-pointer z-10 transition-all duration-300 ${selectedOption === 'Empate' ? 'brightness-[.6]' : 'hover:brightness-[.85]'}`}
+                            onClick={() => {setSelectedOption('Empate')}}
                         >
                             <h1>Empate</h1>
+                            <h1 className="text-sm text-zinc-300">8.00X</h1>
+                            {selectedOption === 'Empate' && apostaTotal > 0 ? <div className={`brightness-[1.4] hover:brightness-[1.4]! ficha ${apostaTotal < 5 ? 'cinza' : apostaTotal < 25 ? 'verde' : apostaTotal < 100 ? 'azul' : apostaTotal < 500 ? 'vermelha' : apostaTotal < 1000 ? 'branca' : 'dourada'} ${apostaTotal <= 999 ? 'text-sm' : apostaTotal > 99999 ? 'text-[7px]' : 'text-[9px]'}`}><p>{apostaTotal}</p></div> : ''}
                         </div>
-                        <div className="flex justify-between items-end flex-col h-full w-[50%] p-3 
-                        bg-red-500 cursor-pointer transition-all duration-300 hover:brightness-[.7]"
-                            onClick={() => {girarDados('Banca')}}
+                        <div className={`flex justify-between items-end flex-col h-full w-[50%] p-3 
+                        bg-red-500 cursor-pointer transition-all duration-300 ${selectedOption === 'Banca' ? 'brightness-[.6]' : 'hover:brightness-[.85]'}`}
+                            onClick={() => {setSelectedOption('Banca')}}
                         >
                             <h1 className="text-xs text-zinc-300">2.00X</h1>
+                            {selectedOption === 'Banca' && apostaTotal > 0 ? <div className={`brightness-[1.4] hover:brightness-[1.4]! ficha ${apostaTotal < 5 ? 'cinza' : apostaTotal < 25 ? 'verde' : apostaTotal < 100 ? 'azul' : apostaTotal < 500 ? 'vermelha' : apostaTotal < 1000 ? 'branca' : 'dourada'} ${apostaTotal <= 999 ? 'text-sm' : apostaTotal > 99999 ? 'text-[7px]' : 'text-[9px]'}`}><p>{apostaTotal}</p></div> : ''}
                             <h1 className="text-lg">Banca</h1>
                         </div>
                     </div>
                     <div className="divFichas flex items-center relative w-full gap-2">
-                        <button className="btnVoltar -left-2 -translate-x-full" title="Tudo" onClick={() => {addAposta(Number(saldo))}}>
-                            <i className="fa-solid fa-wallet"></i>
+                        <button className="btnApagar -left-2 -translate-x-full" title="Apostar" onClick={() => {girarDados(selectedOption)}}>
+                            <i className="fa-solid fa-dice"></i>
                         </button>
-                        <button className="ficha cinza" onClick={() => {addAposta(Number(apostaTotal) + 1)}}><p>1</p></button>
-                        <button className="ficha verde" onClick={() => {addAposta(Number(apostaTotal) + 2)}}><p>5</p></button>
-                        <button className="ficha azul" onClick={() => {addAposta(Number(apostaTotal) + 25)}}><p>25</p></button>
-                        <button className="ficha vermelha text-sm" onClick={() => {addAposta(Number(apostaTotal) + 100)}}><p>100</p></button>
-                        <button className="ficha branca text-sm" onClick={() => {addAposta(Number(apostaTotal) + 500)}}><p>500</p></button>
-                        <button className="ficha dourada text-xs" onClick={() => {addAposta(Number(apostaTotal) + 1000)}}><p>1000</p></button>
-                        <button className="btnApagar -right-2 translate-x-full" title="Apagar" onClick={() => {addAposta(0)}}>
+                        <button className="ficha cinza" onClick={() => {addAposta(1)}}><p>1</p></button>
+                        <button className="ficha verde" onClick={() => {addAposta(5)}}><p>5</p></button>
+                        <button className="ficha azul" onClick={() => {addAposta(25)}}><p>25</p></button>
+                        <button className="ficha vermelha text-sm" onClick={() => {addAposta(100)}}><p>100</p></button>
+                        <button className="ficha branca text-sm" onClick={() => {addAposta(500)}}><p>500</p></button>
+                        <button className="ficha dourada text-xs" onClick={() => {addAposta(1000)}}><p>1000</p></button>
+                        <button className="btnApagar -right-2 translate-x-full" title="Apagar" onClick={() => {setApostaTotal(0)}}>
                             <i className="fa-solid fa-trash-can"></i>
                         </button>
                     </div>
