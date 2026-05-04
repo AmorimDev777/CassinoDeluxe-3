@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";    
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import axios from "axios";
+import Loading from "../components/Loading";
 
 function DetalhesTime() {
     const navigate = useNavigate()
@@ -27,7 +28,7 @@ function DetalhesTime() {
     ))
     
     if (!time) {
-        return <p className="text-white">Carregando...</p>
+        return <Loading />
     }
 
     const campeonatosTime = campeonatos.filter(campeonato => (

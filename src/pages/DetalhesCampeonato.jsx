@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";    
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import axios from "axios";
+import Loading from "../components/Loading";
 
 function DetalhesCampeonato() {
     const navigate = useNavigate()
@@ -26,7 +27,7 @@ function DetalhesCampeonato() {
     )
     
     if (!campeonato) {
-        return <div className="flex justify-center items-center fixed top-0 left-0 h-screen w-full text-9xl text-amber-400 backdrop-blur-lg"><i className="fa-solid fa-spinner animate-[spin_0.5s_linear_infinite]"></i></div>
+        return <Loading />
     }
     
     const timesCampeonato = times.filter(t => 

@@ -217,6 +217,36 @@
             "hora": "12:00",
             "local": "Lá em casa",
             "campeonato": 9
+        },
+        {
+            "id": 7,
+            "time1": "Barcelona",
+            "time2": "Real Madrid",
+            "esporte": "Futebol",
+            "data": "07/07",
+            "hora": "12:00",
+            "local": "Lá perto de casa",
+            "campeonato": 10
+        },
+        {
+            "id": 8,
+            "time1": "Atlético de Madrid",
+            "time2": "Vilarreal",
+            "esporte": "Futebol",
+            "data": "09/09",
+            "hora": "00:00",
+            "local": "Lá longe casa",
+            "campeonato": 12
+        },
+        {
+            "id": 9,
+            "time1": "Remo",
+            "time2": "Barcelona",
+            "esporte": "Futebol",
+            "data": "10/09",
+            "hora": "01:30",
+            "local": "Lá lonjão casa",
+            "campeonato": 14
         }
     ],
     "campeonatos": [
@@ -289,6 +319,46 @@
             "nome": "NFL",
             "logo": "https://upload.wikimedia.org/wikipedia/pt/2/25/National_Football_League_2008.svg.png",
             "esporte": "Futebol Americano",
+            "data_inicio": "01/02/2026",
+            "data_fim": "30/11/2026"
+        },
+        {
+            "id": 10,
+            "nome": "Champions League",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/UEFA_Champions_League_logo_no_text.svg/960px-UEFA_Champions_League_logo_no_text.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20240602100107",
+            "esporte": "Futebol",
+            "data_inicio": "01/02/2026",
+            "data_fim": "30/11/2026"
+        },
+        {
+            "id": 11,
+            "nome": "La Liga",
+            "logo": "https://assets.laliga.com/assets/logos/LL_RGB_h_color/LL_RGB_h_color.png",
+            "esporte": "Futebol",
+            "data_inicio": "01/02/2026",
+            "data_fim": "30/11/2026"
+        },
+        {
+            "id": 12,
+            "nome": "Copa do Rei",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/e/e4/Copa_del_Rey_%28logo%29.svg/960px-Copa_del_Rey_%28logo%29.svg.png",
+            "esporte": "Futebol",
+            "data_inicio": "01/02/2026",
+            "data_fim": "30/11/2026"
+        },
+        {
+            "id": 13,
+            "nome": "1 División Futsal",
+            "logo": "https://www.ogol.com.br//img/logos/edicoes/176235_imgbank_.png",
+            "esporte": "Futsal",
+            "data_inicio": "01/02/2026",
+            "data_fim": "30/11/2026"
+        },
+        {
+            "id": 14,
+            "nome": "Super Mundial de Clubes",
+            "logo": "https://www.ogol.com.br//img/logos/edicoes/186041_imgbank_.png",
+            "esporte": "Futebol",
             "data_inicio": "01/02/2026",
             "data_fim": "30/11/2026"
         }
@@ -847,6 +917,72 @@
       "esporte": "Futsal",
       "patrocinado": false,
       "campeonatos": [{ "id": 1, "campeonato_id": 8 }]
+    },
+    {
+      "id": 65,
+      "nome": "Barcelona Futsal",
+      "escudo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/250px-FC_Barcelona_%28crest%29.svg.png",
+      "esporte": "Futsal",
+      "patrocinado": true,
+      "campeonatos": [{ "id": 1, "campeonato_id": 13 }]
+    },
+    {
+      "id": 66,
+      "nome": "Barcelona",
+      "escudo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/250px-FC_Barcelona_%28crest%29.svg.png",
+      "esporte": "Futebol",
+      "patrocinado": true,
+      "campeonatos": [
+        { "id": 1, "campeonato_id": 10 },
+        { "id": 2, "campeonato_id": 11 },
+        { "id": 3, "campeonato_id": 12 }
+      ]
+    },
+    {
+      "id": 67,
+      "nome": "Real Madrid",
+      "escudo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/250px-Real_Madrid_CF.svg.png",
+      "esporte": "Futebol",
+      "patrocinado": false,
+      "campeonatos": [
+        { "id": 1, "campeonato_id": 10 },
+        { "id": 2, "campeonato_id": 11 },
+        { "id": 3, "campeonato_id": 12 }
+      ]
+    },
+    {
+      "id": 68,
+      "nome": "Atlético de Madrid",
+      "escudo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/1068.png",
+      "esporte": "Futebol",
+      "patrocinado": false,
+      "campeonatos": [
+        { "id": 1, "campeonato_id": 10 },
+        { "id": 2, "campeonato_id": 11 },
+        { "id": 3, "campeonato_id": 12 }
+      ]
+    },
+    {
+      "id": 69,
+      "nome": "Vilarreal",
+      "escudo": "https://upload.wikimedia.org/wikipedia/pt/7/70/Villarreal_CF_logo.svg",
+      "esporte": "Futebol",
+      "patrocinado": false,
+      "campeonatos": [
+        { "id": 1, "campeonato_id": 11 },
+        { "id": 2, "campeonato_id": 12 }
+      ]
+    },
+    {
+      "id": 70,
+      "nome": "Remo",
+      "escudo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/4936.png",
+      "esporte": "Futebol",
+      "patrocinado": true,
+      "campeonatos": [
+        { "id": 1, "campeonato_id": 1 },
+        { "id": 2, "campeonato_id": 3 }
+      ]
     }
-    ]
+  ]
 }

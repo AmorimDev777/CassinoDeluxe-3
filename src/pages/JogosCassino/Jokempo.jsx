@@ -2,6 +2,8 @@ import { useState } from "react"
 import SetaVoltar from "../../components/SetaVoltar"
 import SaldoCassino from "../../components/SaldoCassino"
 import Modal from "../../components/Modal"
+import salvarSaldo from "../../utils/salvarSaldo"
+import salvarAposta from "../../utils/salvarAposta"
 
 function Jokempo() {
     const [saldo, setSaldo] = useState(localStorage.getItem('saldo') || 0)
@@ -17,26 +19,6 @@ function Jokempo() {
 
     const simbolos = ['✊','✋','✌']
 
-    const salvarSaldo = (num) => {
-        localStorage.setItem('saldo', num.toFixed(2))
-        setSaldo(num.toFixed(2))
-    }
-    const salvarAposta = (valorApostado, jogo, aposta, ganhou) => {
-        const data = new Date().toLocaleDateString('pt-BR')
-        const hora = new Date().toLocaleTimeString('pt-BR')
-
-        const historico = JSON.parse(localStorage.getItem('historicoApostas')) || []
-
-        historico.push({
-            valor: "R$ " + Number(valorApostado).toFixed(2).replace('.', ','),
-            jogo,
-            aposta,
-            status: ganhou,
-            data: `${data} ${hora}`
-        })
-
-        localStorage.setItem('historicoApostas', JSON.stringify(historico))
-    }
     const apostar = () => {
         if (jogando) return console.log('Espere...')
         if (Number(inputValue) <= 0) return alert('Digite valor válido')
@@ -62,7 +44,7 @@ function Jokempo() {
                 setSimboloAngle(110)
             }
             if (contador >= maxGiros) {
-                let ganhou = 'Perdeu'
+                let status = 'Perdeu'
                 let jogada = ''
                 let newSaldo = Number(saldo) - Number(inputValue)
 
@@ -77,7 +59,7 @@ function Jokempo() {
                     if (simboloEscolhido === '✋') jogada = 'Papel'
                     if (simboloEscolhido === '✌') jogada = 'Tesoura'
                     newSaldo = Number(saldo)
-                    ganhou = 'Empate'
+                    status = 'Empate'
                     console.log('Empate')
                 }
                 if (simboloEscolhido === '✊') {
@@ -85,7 +67,7 @@ function Jokempo() {
                     if (sMaq === '✋') console.log('Máquina Venceu')
                     if (sMaq === '✌') {
                         newSaldo = Number(saldo) + Number(inputValue)
-                        ganhou = 'Ganhou'
+                        status = 'Ganhou'
                         console.log('Você Venceu')
                     }
                 }
@@ -94,7 +76,7 @@ function Jokempo() {
                     if (sMaq === '✌') console.log('Máquina Venceu')
                     if (sMaq === '✊') {
                         newSaldo = Number(saldo) + Number(inputValue)
-                        ganhou = 'Ganhou'
+                        status = 'Ganhou'
                         console.log('Você Venceu')
                     }
                 }
@@ -103,12 +85,12 @@ function Jokempo() {
                     if (sMaq === '✊') console.log('Máquina Venceu')
                     if (sMaq === '✋') {
                         newSaldo = Number(saldo) + Number(inputValue)
-                        ganhou = 'Ganhou'
+                        status = 'Ganhou'
                         console.log('Você Venceu')
                     }
                 }
-                salvarSaldo(newSaldo)
-                salvarAposta(inputValue, 'Jokempo', jogada, ganhou)
+                salvarSaldo(newSaldo, setSaldo)
+                salvarAposta(inputValue, 'Jokempo', jogada, status)
             }
         }, 200)
     }
@@ -126,7 +108,9 @@ function Jokempo() {
                     style={{transform: `rotateZ(-${simboloAngle}deg)`}}
                 >{simboloMaq}</div>
             </div>
-            <div className="flex justify-center items-center flex-col relative p-4 gap-2 bg-white rounded-xl">
+            <div className="flex justify-center items-center flex-col relative p-4 gap-2 bg-white 
+            rounded-xl"
+            >
                 <input 
                     type="number" 
                     placeholder="Valor da Aposta" 
@@ -154,14 +138,16 @@ function Jokempo() {
                     >✌</button>
                 </span>
                 <button 
-                    className="w-full p-3 bg-zinc-900 text-white rounded-md cursor-pointer transition-all
-                    duration-200 hover:brightness-[.6]"
+                    className="w-full p-3 bg-zinc-900 text-white rounded-md cursor-pointer 
+                    transition-all duration-200 hover:brightness-[.6]"
                     onClick={apostar}
                 >Apostar</button>
                 <button
-                    className="absolute bottom-0 translate-y-[calc(100%+20px)] text-4xl text-white cursor-pointer transition-all duration-200 hover:brightness-[.8] min-[460px]:right-0 min-[460px]:translate-x-[calc(100%+20px)] min-[460px]:translate-y-0"
+                    className="absolute bottom-0 translate-y-[calc(100%+20px)] text-4xl text-white 
+                    cursor-pointer transition-all duration-200 hover:brightness-[.8] min-[460px]:right-0 
+                    min-[460px]:translate-x-[calc(100%+20px)] min-[460px]:translate-y-0"
                     onClick={() => setModalStatus(!modalStatus)}
-                    >
+                >
                     <i className="fa-solid fa-circle-info"></i>
                 </button>
             </div>

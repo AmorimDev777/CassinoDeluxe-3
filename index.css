@@ -16,8 +16,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 .customScroll::-webkit-scrollbar-thumb {
-    background: white;
-    border-radius: 50rem;
+    background: rgb(44, 44, 44);
 }
 .customScroll::-webkit-scrollbar {
     background: rgb(24, 24, 24);
@@ -321,6 +320,16 @@ input::-webkit-inner-spin-button {
     .diceAnim {
       animation: spinBounce 0.8s infinite linear;
       display: inline-block;
+    }
+}
+.mainAllTeams {
+    .customScroll::-webkit-scrollbar-thumb {
+        background: rgb(255, 255, 255);
+        border-radius: 50rem;
+    }
+    .customScroll::-webkit-scrollbar {
+        background: rgb(24, 24, 24);
+        height: 10px;
     }
 }
 

@@ -17,8 +17,11 @@ import FruitBonanza from './pages/JogosCassino/FruitBonanza'
 import JogoEsporte from './pages/JogoEsporte'
 import DetalhesTime from './pages/DetalhesTime'
 import DetalhesCampeonato from './pages/DetalhesCampeonato'
+import AllTeams from './pages/ADM/AllTeams'
+import AllChampionships from './pages/ADM/AllChampionships'
 
 function App() {
+
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -39,6 +42,9 @@ function App() {
       <Route path="/jokempo" element={<Jokempo />} />
       <Route path="/bacbo" element={<BacBo />} />
       <Route path="/fruitbonanza" element={<FruitBonanza />} />
+      {/* ADM */}
+      <Route path="/ADM/allteams" element={<AllTeams />} />
+      <Route path="/ADM/allchampionships" element={<AllChampionships />} />
       {/* Pagina não encontrada */}
       <Route path="*" element={<Erro404 />} />  {/* rota catch-all */}
     </Routes>

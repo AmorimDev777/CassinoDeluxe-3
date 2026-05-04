@@ -3,6 +3,8 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import axios from "axios";
 import SaldoCassino from "../components/SaldoCassino"
 import SetaVoltar from "../components/SetaVoltar"
+import ImgLoading from "../assets/ImgLoading.png"
+import Loading from "../components/Loading";
 
 function JogoEsporte() {
     const [saldo, setSaldo] = useState(localStorage.getItem('saldo') || 0)
@@ -43,7 +45,7 @@ function JogoEsporte() {
         t.nome === time2Nome && t.esporte === esporteNome
     ))
     if (!confronto || !campeonato || !time1 || !time2) {
-        return <div className="flex justify-center items-center fixed top-0 left-0 h-screen w-full text-9xl text-amber-400 backdrop-blur-lg"><i className="fa-solid fa-spinner animate-[spin_0.5s_linear_infinite]"></i></div>
+        return <Loading />
     }
     return (
         <>

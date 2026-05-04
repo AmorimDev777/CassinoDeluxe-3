@@ -1,14 +1,10 @@
 import { useState, useEffect } from "react";
 
 function CardEsportes({confronto, time1, time2, campeonato, onClick}) {
-    if (!time1 || !time2) {
-        return <div className="flex justify-center items-center fixed top-0 left-0 h-screen w-full text-9xl text-amber-400 backdrop-blur-lg"><i class="fa-solid fa-spinner animate-[spin_0.5s_linear_infinite]"></i></div>
-    }
-
     return (
         <div 
-            className="flex justify-between w-full h-20 bg-white border-2 border-zinc-400 rounded-xl cursor-pointer transition-all duration-200 
-                hover:brightness-[.8]" 
+            className="flex justify-between w-full h-20 bg-white border-2 border-zinc-400 rounded-xl 
+                cursor-pointer transition-all duration-200 hover:brightness-[.8]" 
             onClick={onClick}
         >       
             <div className="flex h-full">

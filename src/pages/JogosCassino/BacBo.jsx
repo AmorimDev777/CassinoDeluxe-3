@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import AlertBacBo from "../../components/AlertBacBo"
+import salvarSaldo from "../../utils/salvarSaldo"
+import salvarAposta from "../../utils/salvarAposta"
 
 function BacBo() {
     const [saldo, setSaldo] = useState(localStorage.getItem('saldo') || 0)
@@ -66,37 +68,57 @@ function BacBo() {
         let jogadorPontos = (dados.indexOf(d1) + 1) + (dados.indexOf(d3) + 1)
         let bancaPontos = (dados.indexOf(d2) + 1) + (dados.indexOf(d4) + 1)
         let odd = aposta === 'Empate' ? 8 : 2
+        let newSaldo = 0
+        let status = 'Perdeu'
         if (aposta !== 'Empate') {
             if (aposta === 'Jogador') {
                 if (jogadorPontos > bancaPontos) {
-                    setSaldo((Number(saldo) - Number(apostaTotal)) + (Number(apostaTotal) * odd))
+                    newSaldo = (Number(saldo) - Number(apostaTotal)) + (Number(apostaTotal) * odd)
+                    status = 'Ganhou'
                     alertar('Jogador', 'Jogador Ganhou')
                 }
+                else if (jogadorPontos === bancaPontos) {
+                    newSaldo = Number(saldo) - Number(apostaTotal)
+                    alertar('Empate', 'Empate')
+                }
                 else {
-                    setSaldo(Number(saldo) - Number(apostaTotal))
+                    newSaldo = Number(saldo) - Number(apostaTotal)
                     alertar('Banca', 'Banca Ganhou')
                 }
             }
             else {
                 if (jogadorPontos < bancaPontos) {
-                    setSaldo((Number(saldo) - Number(apostaTotal)) + (Number(apostaTotal) * odd))
+                    newSaldo = (Number(saldo) - Number(apostaTotal)) + (Number(apostaTotal) * odd)
+                    status = 'Ganhou'
                     alertar('Banca', 'Banca Ganhou')
                 }
+                else if (jogadorPontos === bancaPontos) {
+                    newSaldo = Number(saldo) - Number(apostaTotal)
+                    alertar('Empate', 'Empate')
+                }
                 else {
-                    setSaldo(Number(saldo) - Number(apostaTotal))
+                    newSaldo = Number(saldo) - Number(apostaTotal)
                     alertar('Jogador', 'Jogador Ganhou')
                 }
             }
         }
         else {
-            if (jogadorPontos === bancaPontos) {
+            if (jogadorPontos < bancaPontos) {
+                newSaldo = Number(saldo) - Number(apostaTotal)
+                alertar('Banca', 'Banca Ganhou')
+            }
+            else if (jogadorPontos === bancaPontos) {
+                newSaldo = (Number(saldo) - Number(apostaTotal)) + (Number(apostaTotal) * odd)
+                status = 'Ganhou'
                 alertar('Empate', 'Empate')
-                setSaldo((Number(saldo) - Number(apostaTotal)) + (Number(apostaTotal) * odd))
             }
             else {
-                setSaldo(Number(saldo) - Number(apostaTotal))
+                newSaldo = Number(saldo) - Number(apostaTotal)
+                alertar('Jogador', 'Jogador Ganhou')
             }
         }
+        salvarSaldo(newSaldo, setSaldo)
+        salvarAposta(Number(apostaTotal), 'BacBo', aposta, status)
     }
     const girarDados = (aposta) => {
 
