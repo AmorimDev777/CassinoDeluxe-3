@@ -2,6 +2,8 @@ import { useState } from "react"
 import RoletaCassino from "../../components/RoletaCassino"
 import SaldoCassino from "../../components/SaldoCassino"
 import SetaVoltar from "../../components/SetaVoltar"
+import salvarSaldo from "../../utils/salvarSaldo"
+import salvarAposta from "../../utils/salvarAposta"
 
 function Roleta() {
     const [saldo, setSaldo] = useState(localStorage.getItem('saldo') || 0)
@@ -47,28 +49,12 @@ function Roleta() {
         if (cores[index] == selectedColor) {
             let newSaldo = 0
             newSaldo = (Number(saldo) - Number(inputValue)) + (Number(inputValue) * odd)
-            localStorage.setItem('saldo', newSaldo)
-            setSaldo(newSaldo)
             ganhou = "Ganhou"
+            salvarSaldo(newSaldo, setSaldo)
         }
-        
-        salvarAposta(inputValue, 'Roleta', selectedColor, ganhou)
+        salvarAposta(Number(inputValue), 'Roleta', selectedColor, ganhou)
         setIsSpinning(false)
       }, 3000)
-    }
-    const salvarAposta = (valorApostado, jogo, aposta, ganhou) => {
-        const data = new Date().toLocaleDateString('pt-BR');
-        const hora = new Date().toLocaleTimeString('pt-BR');
-        const historicoApostas = JSON.parse(localStorage.getItem('historicoApostas')) || []
-        const apostaSalvar = {
-            "valor": "R$ " + Number(valorApostado).toFixed(2).replace('.', ','),
-            "jogo": jogo,
-            "aposta": aposta,
-            "status": ganhou,
-            "data": (`${data} ` + hora)
-        }
-        historicoApostas.push(apostaSalvar)
-        localStorage.setItem('historicoApostas', JSON.stringify(historicoApostas))
     }
     return (
         <main className="mainRoleta flex justify-center items-center flex-col h-screen gap-5">

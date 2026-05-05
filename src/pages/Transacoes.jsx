@@ -110,7 +110,7 @@ function Transacoes() {
     }
     return (
         <main className="mainTransacoes flex flex-col h-fit w-full p-5 gap-5 sm:flex-row sm:h-screen">
-            <div className="customScroll flex items-center flex-col h-full w-full p-3 gap-3 bg-white rounded-2xl overflow-auto 
+            <div className="customScroll flex items-center flex-col h-full w-full p-3 gap-3 bg-slate-200 rounded-2xl overflow-auto 
             sm:w-[250px]">
                 <span className="hidden w-[80%] sm:flex">
                     <img src={Logo} alt="" className="transition-all duration-200 hover:scale-[1.1]" onClick={() => {setselectedOption('')}}/>
@@ -180,7 +180,7 @@ function Transacoes() {
                     Voltar Home
                 </Link>
             </div>
-            <div className="flex justify-center items-center flex-col relative flex-1 w-full p-10 gap-5 bg-white rounded-2xl">
+            <div className="flex justify-center items-center flex-col relative flex-1 w-full p-10 gap-5 bg-slate-200 rounded-2xl">
                 {renderContent()}
             </div>
         </main>

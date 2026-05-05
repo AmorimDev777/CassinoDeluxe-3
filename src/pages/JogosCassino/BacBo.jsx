@@ -19,20 +19,35 @@ function BacBo() {
     const [isSpinningDado2, setIsSpinningDado2] = useState(false)
     const [isSpinningDado3, setIsSpinningDado3] = useState(false)
     const [isSpinningDado4, setIsSpinningDado4] = useState(false)
+    const [historico, setHistorico] = useState(JSON.parse(localStorage.getItem('historicoBacBo')) || [])
     const dados = ["one", "two", "three", "four", "five", "six"]
     const r = () => {
         const botoes = []
-
         for (let i = 0; i < 108; i++) {
+            if (i < 108) {
             botoes.push(
                 <button key={i} className={`flex justify-center items-center h-4 p-1
-                ${i > 26 ? 'text-[4px]  text-zinc-500' : 'text-[10px]  text-white bg-red-500'} font-medium aspect-square rounded-full`}>
-                    {i > 26 ? (<i className="fa-solid fa-circle"></i>) : ('B')}
+                ${i >= historico.length ? 'text-[4px]  text-zinc-500' : 'text-[10px]  text-white'} ${historico[i] == 'J' ? 'bg-blue-600' : historico[i] == 'B' ? 'bg-red-500' : historico[i] == 'E' ? 'bg-green-600' : ''} font-medium aspect-square rounded-full`}>
+                    {i >= historico.length ? (<i className="fa-solid fa-circle"></i>) : (historico[i])}
                 </button>
             )
+            }
+            else {
+                setHistorico([])
+                localStorage.removeItem('historicoBacBo')
+            }
         }
 
         return botoes
+    }
+    const salvarHistorico = (resultado) => {
+        const historicoBacBo = historico
+        
+        historicoBacBo.push(resultado)
+
+        setHistorico(historicoBacBo)
+
+        localStorage.setItem('historicoBacBo', JSON.stringify(historicoBacBo))
     }
     const alertar = (status, msg) => {
         setStatusAlert(status)
@@ -70,55 +85,67 @@ function BacBo() {
         let odd = aposta === 'Empate' ? 8 : 2
         let newSaldo = 0
         let status = 'Perdeu'
+        let resultado = ''
         if (aposta !== 'Empate') {
             if (aposta === 'Jogador') {
                 if (jogadorPontos > bancaPontos) {
                     newSaldo = (Number(saldo) - Number(apostaTotal)) + (Number(apostaTotal) * odd)
                     status = 'Ganhou'
-                    alertar('Jogador', 'Jogador Ganhou')
+                    resultado = 'Jogador'
+                    alertar(resultado, 'Jogador Ganhou')
                 }
                 else if (jogadorPontos === bancaPontos) {
-                    newSaldo = Number(saldo) - Number(apostaTotal)
-                    alertar('Empate', 'Empate')
+                    newSaldo = Number(saldo)
+                    resultado = 'Empate'
+                    alertar(resultado, 'Empate')
                 }
                 else {
                     newSaldo = Number(saldo) - Number(apostaTotal)
-                    alertar('Banca', 'Banca Ganhou')
+                    resultado = 'Banca'
+                    alertar(resultado, 'Banca Ganhou')
                 }
             }
             else {
                 if (jogadorPontos < bancaPontos) {
                     newSaldo = (Number(saldo) - Number(apostaTotal)) + (Number(apostaTotal) * odd)
                     status = 'Ganhou'
-                    alertar('Banca', 'Banca Ganhou')
+                    resultado = 'Banca'
+                    alertar(resultado, 'Banca Ganhou')
                 }
                 else if (jogadorPontos === bancaPontos) {
-                    newSaldo = Number(saldo) - Number(apostaTotal)
-                    alertar('Empate', 'Empate')
+                    newSaldo = Number(saldo)
+                    resultado = 'Empate'
+                    alertar(resultado, 'Empate')
                 }
                 else {
                     newSaldo = Number(saldo) - Number(apostaTotal)
-                    alertar('Jogador', 'Jogador Ganhou')
+                    resultado = 'Jogador'
+                    alertar(resultado, 'Jogador Ganhou')
                 }
             }
         }
         else {
             if (jogadorPontos < bancaPontos) {
                 newSaldo = Number(saldo) - Number(apostaTotal)
-                alertar('Banca', 'Banca Ganhou')
+                resultado = 'Banca'
+                alertar(resultado, 'Banca Ganhou')
             }
             else if (jogadorPontos === bancaPontos) {
                 newSaldo = (Number(saldo) - Number(apostaTotal)) + (Number(apostaTotal) * odd)
                 status = 'Ganhou'
-                alertar('Empate', 'Empate')
+                resultado = 'Empate'
+                alertar(resultado, 'Empate')
             }
             else {
                 newSaldo = Number(saldo) - Number(apostaTotal)
-                alertar('Jogador', 'Jogador Ganhou')
+                resultado = 'Jogador'
+                alertar(resultado, 'Jogador Ganhou')
             }
         }
+        const rToSave = resultado == 'Jogador' ? 'J' : resultado == 'Banca' ? 'B' : 'E'
         salvarSaldo(newSaldo, setSaldo)
         salvarAposta(Number(apostaTotal), 'BacBo', aposta, status)
+        salvarHistorico(rToSave)
     }
     const girarDados = (aposta) => {
 
@@ -189,7 +216,9 @@ function BacBo() {
                     </Link>
                     <h1 className="text-xl">Bac Bo Offline</h1>
                 </span>
-                <div className="grid grid-cols-12 grid-rows-9 absolute left-5 gap-1 p-1 -translate-y-[calc(40%)] rounded-tr-xl rounded-br-xl">
+                <div className="grid grid-cols-12 grid-rows-9 absolute left-5 gap-1 p-1 
+                -translate-y-[calc(40%)] rounded-tr-xl rounded-br-xl"
+                >
                     {r()}
                 </div>
                 <div className="flex absolute left-5 gap-3">
@@ -198,13 +227,17 @@ function BacBo() {
                         onClick={() => {setApostaTotal(Number(saldo))}}
                     >
                         <h1 className="text-xs text-white">Saldo</h1>
-                        <p className="text-sm text-amber-400">R$ {Number(saldo).toFixed(2).replace('.', ',')}</p>
+                        <p className="text-sm text-amber-400">
+                            R$ {Number(saldo).toFixed(2).replace('.', ',')}
+                        </p>
                     </span>
                     <span className="flex justify-center items-center flex-col py-2 px-6 bg-black/50 
                     border-2 border-zinc-700 rounded-full"
                     >
                         <h1 className="text-xs text-white">Aposta Total</h1>
-                        <p className="text-sm text-amber-400">R$ {Number(apostaTotal).toFixed(2).replace('.', ',')}</p>
+                        <p className="text-sm text-amber-400">
+                            R$ {Number(apostaTotal).toFixed(2).replace('.', ',')}
+                        </p>
                     </span>
                 </div>
                 <div className="flex flex-col gap-4">
@@ -212,48 +245,128 @@ function BacBo() {
                     text-white aspect-2/1 rounded-2xl overflow-hidden"
                     >
                         <div className={`flex justify-between items-start flex-col relative h-full w-[50%] p-3 
-                            bg-blue-700 cursor-pointer transition-all duration-300 ${selectedOption === 'Jogador' ? 'brightness-[.6]' : 'hover:brightness-[.85]'}`}
+                            bg-blue-700 cursor-pointer transition-all duration-300 
+                            ${selectedOption === 'Jogador' ? 'brightness-[.6]' : 'hover:brightness-[.85]'}`}
                             onClick={() => {setSelectedOption('Jogador')}}
                         >
                             <h1 className="text-xs text-zinc-300">2.00X</h1>
-                            {selectedOption === 'Jogador' && apostaTotal > 0 ? <div className={`brightness-[1.4] hover:brightness-[1.4]! ficha ${apostaTotal < 5 ? 'cinza' : apostaTotal < 25 ? 'verde' : apostaTotal < 100 ? 'azul' : apostaTotal < 500 ? 'vermelha' : apostaTotal < 1000 ? 'branca' : 'dourada'} ${apostaTotal <= 999 ? 'text-sm' : apostaTotal > 99999 ? 'text-[7px]' : 'text-[9px]'}`}><p>{apostaTotal}</p></div> : ''}
+                            {selectedOption === 'Jogador' && apostaTotal > 0 
+                            ? <div className={`brightness-[1.4] hover:brightness-[1.4]! ficha 
+                                ${apostaTotal < 5 
+                                    ? 'cinza' 
+                                    : apostaTotal < 25 
+                                    ? 'verde' 
+                                    : apostaTotal < 100 
+                                    ? 'azul' 
+                                    : apostaTotal < 500 
+                                    ? 'vermelha' 
+                                    : apostaTotal < 1000 
+                                    ? 'branca' 
+                                    : 'dourada'
+                                } 
+                                ${apostaTotal <= 999 
+                                    ? 'text-sm' 
+                                    : apostaTotal > 99999 
+                                    ? 'text-[7px]' 
+                                    : 'text-[9px]'
+                                }`}><p>{apostaTotal}</p></div> 
+                            : ''}
                             <h1 className="text-lg">Jogador</h1>
                         </div>
-                        <div className={`flex justify-center items-center flex-col absolute h-[90%] bg-green-600 
-                        border-4 border-zinc-300 text-xl aspect-square rounded-full cursor-pointer z-10 transition-all duration-300 ${selectedOption === 'Empate' ? 'brightness-[.6]' : 'hover:brightness-[.85]'}`}
+                        <div className={`flex justify-center items-center flex-col absolute h-[90%] 
+                             bg-green-600 border-4 border-zinc-300 text-xl aspect-square rounded-full 
+                            cursor-pointer z-10 transition-all duration-300 
+                            ${selectedOption === 'Empate' ? 'brightness-[.6]' : 'hover:brightness-[.85]'}`}
                             onClick={() => {setSelectedOption('Empate')}}
                         >
                             <h1>Empate</h1>
                             <h1 className="text-sm text-zinc-300">8.00X</h1>
-                            {selectedOption === 'Empate' && apostaTotal > 0 ? <div className={`brightness-[1.4] hover:brightness-[1.4]! ficha ${apostaTotal < 5 ? 'cinza' : apostaTotal < 25 ? 'verde' : apostaTotal < 100 ? 'azul' : apostaTotal < 500 ? 'vermelha' : apostaTotal < 1000 ? 'branca' : 'dourada'} ${apostaTotal <= 999 ? 'text-sm' : apostaTotal > 99999 ? 'text-[7px]' : 'text-[9px]'}`}><p>{apostaTotal}</p></div> : ''}
+                            {selectedOption === 'Empate' && apostaTotal > 0 
+                            ? <div className={`brightness-[1.4] hover:brightness-[1.4]! ficha 
+                                ${apostaTotal < 5 
+                                    ? 'cinza' 
+                                    : apostaTotal < 25 
+                                    ? 'verde' 
+                                    : apostaTotal < 100 
+                                    ? 'azul' 
+                                    : apostaTotal < 500 
+                                    ? 'vermelha' 
+                                    : apostaTotal < 1000 
+                                    ? 'branca' 
+                                    : 'dourada'
+                                } 
+                                ${apostaTotal <= 999 
+                                    ? 'text-sm' 
+                                    : apostaTotal > 99999 
+                                    ? 'text-[7px]' 
+                                    : 'text-[9px]'
+                                }`}><p>{apostaTotal}</p></div> 
+                            : ''}
                         </div>
                         <div className={`flex justify-between items-end flex-col h-full w-[50%] p-3 
                         bg-red-500 cursor-pointer transition-all duration-300 ${selectedOption === 'Banca' ? 'brightness-[.6]' : 'hover:brightness-[.85]'}`}
                             onClick={() => {setSelectedOption('Banca')}}
                         >
                             <h1 className="text-xs text-zinc-300">2.00X</h1>
-                            {selectedOption === 'Banca' && apostaTotal > 0 ? <div className={`brightness-[1.4] hover:brightness-[1.4]! ficha ${apostaTotal < 5 ? 'cinza' : apostaTotal < 25 ? 'verde' : apostaTotal < 100 ? 'azul' : apostaTotal < 500 ? 'vermelha' : apostaTotal < 1000 ? 'branca' : 'dourada'} ${apostaTotal <= 999 ? 'text-sm' : apostaTotal > 99999 ? 'text-[7px]' : 'text-[9px]'}`}><p>{apostaTotal}</p></div> : ''}
+                            {selectedOption === 'Banca' && apostaTotal > 0 
+                            ? <div className={`brightness-[1.4] hover:brightness-[1.4]! ficha 
+                                ${apostaTotal < 5 
+                                    ? 'cinza' 
+                                    : apostaTotal < 25 
+                                    ? 'verde' 
+                                    : apostaTotal < 100 
+                                    ? 'azul' 
+                                    : apostaTotal < 500 
+                                    ? 'vermelha' 
+                                    : apostaTotal < 1000 
+                                    ? 'branca' 
+                                    : 'dourada'
+                                } 
+                                ${apostaTotal <= 999 
+                                    ? 'text-sm' 
+                                    : apostaTotal > 99999 
+                                    ? 'text-[7px]' 
+                                    : 'text-[9px]'
+                                }`}><p>{apostaTotal}</p></div> 
+                            : ''}
                             <h1 className="text-lg">Banca</h1>
                         </div>
                     </div>
                     <div className="divFichas flex items-center relative w-full gap-2">
-                        <button className="btnApagar -left-2 -translate-x-full" title="Apostar" onClick={() => {girarDados(selectedOption)}}>
+                        <button 
+                            className="btnApagar -left-2 -translate-x-full" 
+                            title="Apostar" 
+                            onClick={() => {girarDados(selectedOption)}}
+                        >
                             <i className="fa-solid fa-dice"></i>
                         </button>
-                        <button className="ficha cinza" onClick={() => {addAposta(1)}}><p>1</p></button>
-                        <button className="ficha verde" onClick={() => {addAposta(5)}}><p>5</p></button>
-                        <button className="ficha azul" onClick={() => {addAposta(25)}}><p>25</p></button>
-                        <button className="ficha vermelha text-sm" onClick={() => {addAposta(100)}}><p>100</p></button>
-                        <button className="ficha branca text-sm" onClick={() => {addAposta(500)}}><p>500</p></button>
-                        <button className="ficha dourada text-xs" onClick={() => {addAposta(1000)}}><p>1000</p></button>
+                        <button className="ficha cinza" onClick={() => {addAposta(1)}}>
+                            <p>1</p>
+                        </button>
+                        <button className="ficha verde" onClick={() => {addAposta(5)}}>
+                            <p>5</p>
+                        </button>
+                        <button className="ficha azul" onClick={() => {addAposta(25)}}>
+                            <p>25</p>
+                        </button>
+                        <button className="ficha vermelha text-sm" onClick={() => {addAposta(100)}}>
+                            <p>100</p>
+                        </button>
+                        <button className="ficha branca text-sm" onClick={() => {addAposta(500)}}>
+                            <p>500</p>
+                        </button>
+                        <button className="ficha dourada text-xs" onClick={() => {addAposta(1000)}}>
+                            <p>1000</p>
+                        </button>
                         <button className="btnApagar -right-2 translate-x-full" title="Apagar" onClick={() => {setApostaTotal(0)}}>
                             <i className="fa-solid fa-trash-can"></i>
                         </button>
                     </div>
                 </div>
                 <div className="flex absolute right-5 gap-3">
-                    <Link to='/transacoes' className="flex justify-center items-center flex-col py-2 px-6 bg-black/50 
-                    border-2 border-zinc-700 rounded-full transition-all duration-200 hover:brightness-[.7]"
+                    <Link to='/transacoes' className="flex justify-center items-center flex-col py-2 px-6 
+                    bg-black/50 border-2 border-zinc-700 rounded-full transition-all duration-200 
+                    hover:brightness-[.7]"
                     >
                         <h1 className="text-base text-white">Ir Para Depósito</h1>
                     </Link>

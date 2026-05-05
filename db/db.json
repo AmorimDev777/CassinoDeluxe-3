@@ -361,6 +361,14 @@
             "esporte": "Futebol",
             "data_inicio": "01/02/2026",
             "data_fim": "30/11/2026"
+        },
+        {
+            "id": 15,
+            "nome": "Paulistão",
+            "logo": "https://upload.wikimedia.org/wikipedia/pt/9/92/Paulist%C3%A3o_sicred_2022.png",
+            "esporte": "Futebol",
+            "data_inicio": "01/02/2026",
+            "data_fim": "30/11/2026"
         }
     ],
     "times": [
@@ -416,7 +424,8 @@
       "campeonatos": [
         { "id": 1, "campeonato_id": 1 },
         { "id": 2, "campeonato_id": 3 },
-        { "id": 3, "campeonato_id": 4 }
+        { "id": 3, "campeonato_id": 4 },
+        { "id": 4, "campeonato_id": 15 }
       ]
     },
     {
@@ -503,7 +512,8 @@
       "patrocinado": false,
       "campeonatos": [
         { "id": 1, "campeonato_id": 1 },
-        { "id": 2, "campeonato_id": 3 }
+        { "id": 2, "campeonato_id": 3 },
+        { "id": 3, "campeonato_id": 15 }
       ]
     },
     {
@@ -515,7 +525,8 @@
       "campeonatos": [
         { "id": 1, "campeonato_id": 1 },
         { "id": 2, "campeonato_id": 3 },
-        { "id": 3, "campeonato_id": 4 }
+        { "id": 3, "campeonato_id": 4 },
+        { "id": 4, "campeonato_id": 15 }
       ]
     },
     {
@@ -526,7 +537,8 @@
       "patrocinado": true,
       "campeonatos": [
         { "id": 1, "campeonato_id": 1 },
-        { "id": 2, "campeonato_id": 3 }
+        { "id": 2, "campeonato_id": 3 },
+        { "id": 3, "campeonato_id": 15 }
       ]
     },
     {
@@ -970,7 +982,8 @@
       "patrocinado": false,
       "campeonatos": [
         { "id": 1, "campeonato_id": 11 },
-        { "id": 2, "campeonato_id": 12 }
+        { "id": 2, "campeonato_id": 12 },
+        { "id": 3, "campeonato_id": 14 }
       ]
     },
     {
@@ -981,7 +994,8 @@
       "patrocinado": true,
       "campeonatos": [
         { "id": 1, "campeonato_id": 1 },
-        { "id": 2, "campeonato_id": 3 }
+        { "id": 2, "campeonato_id": 3 },
+        { "id": 3, "campeonato_id": 14 }
       ]
     }
   ]

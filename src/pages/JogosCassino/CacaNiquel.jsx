@@ -2,6 +2,8 @@ import { useState } from "react"
 import SetaVoltar from "../../components/SetaVoltar"
 import Modal from "../../components/Modal"
 import SaldoCassino from "../../components/SaldoCassino"
+import salvarSaldo from "../../utils/salvarSaldo"
+import salvarAposta from "../../utils/salvarAposta"
 
 function CacaNiquel() {
     const [saldo, setSaldo] = useState(Number(localStorage.getItem('saldo')) || 0)
@@ -49,28 +51,6 @@ function CacaNiquel() {
         return 2
     }
 
-    const salvarSaldo = (num) => {
-        localStorage.setItem('saldo', num.toFixed(2))
-        setSaldo(num.toFixed(2))
-    }
-
-    const salvarAposta = (valorApostado, jogo, aposta, ganhou) => {
-        const data = new Date().toLocaleDateString('pt-BR')
-        const hora = new Date().toLocaleTimeString('pt-BR')
-
-        const historico = JSON.parse(localStorage.getItem('historicoApostas')) || []
-
-        historico.push({
-            valor: "R$ " + Number(valorApostado).toFixed(2).replace('.', ','),
-            jogo,
-            aposta,
-            status: ganhou,
-            data: `${data} ${hora}`
-        })
-
-        localStorage.setItem('historicoApostas', JSON.stringify(historico))
-    }
-
     const finalizarResultado = (s1, s2, s3) => {
         let newSaldo = Number(saldo) - Number(inputValue)
         let giro = "Giro"
@@ -92,7 +72,7 @@ function CacaNiquel() {
             ganhou = "Ganhou"
         }
         
-        salvarSaldo(newSaldo)
+        salvarSaldo(newSaldo, setSaldo)
         salvarAposta(inputValue, 'Caça Níquel', giro, ganhou)
     }
 
@@ -143,7 +123,7 @@ function CacaNiquel() {
 
         let newSaldo = Number(saldo) - (Number(inputValue) * 100)
 
-        salvarSaldo(newSaldo)
+        salvarSaldo(newSaldo, setSaldo)
         setRodadasBonus(10)
         setSimbolos(sBonus)
         setIsInBonus(true)

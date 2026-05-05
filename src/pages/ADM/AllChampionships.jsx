@@ -66,21 +66,21 @@ function AllChampionships() {
                         <div className={`customScroll grid justify-start items-start grid-cols-10 w-full py-3 gap-3 scroll-smooth`}
                         >
                             {isOpen
-                                ? esportes[e].map((t, i) => (
+                                ? esportes[e].map((c, i) => (
                                       <Link
                                           key={i}
-                                          to={`/detalhes/time?time=${t.nome}&esporte=${t.esporte}`}
+                                          to={`/detalhes/campeonato?campeonato=${c.id}`}
                                           className="flex justify-center items-center flex-col relative p-6 bg-zinc-800 
                                           aspect-square rounded-3xl transition-all duration-300 hover:scale-[1.05]
                                         hover:bg-zinc-700 group"
-                                          title={t.id}
+                                          title={c.id}
                                       >
                                           <img
-                                              src={t.logo}
+                                              src={c.logo}
                                               alt=""
                                               className="h-full aspect-square object-contain"
                                           />
-                                          <p className="hidden absolute bottom-0 text-white group-hover:flex">{t.id}</p>
+                                          <p className="hidden absolute bottom-0 text-white group-hover:flex">{c.id}</p>
                                       </Link>
                                   ))
                                 : ''}
